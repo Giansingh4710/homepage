@@ -30,7 +30,7 @@ $(function() {
 	// Poptrox.
 		$window.on('load', function() {
 
-			$('.thumbnails').poptrox({
+		/*	$('.thumbnails').poptrox({
 				onPopupClose: function() { $body.removeClass('is-covered'); },
 				onPopupOpen: function() { $body.addClass('is-covered'); },
 				baseZIndex: 10001,
@@ -42,6 +42,7 @@ $(function() {
 				fadeSpeed: 500,
 				usePopupDefaultStyling: false,
 				windowMargin: (skel.breakpoint('small').active ? 5 : 50)
+		*/
 			});
 
 		});
