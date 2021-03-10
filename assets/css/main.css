@@ -18,7 +18,7 @@
   
   @keyframes example {
 	from {top: 2000px;}
-	to {top: 0px; background-color: blue;}
+	to {top: 0px;}
   }
 p {
 	margin-bottom: -1em;  margin-top: 0em;
