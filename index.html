@@ -75,7 +75,8 @@
         for (let i = 0; i < theData.length; i++) {
           const urlToRepo = theData[i].html_url;
           const repoName = theData[i].full_name.split("/")[1];
-          if (repoName == "gurmukhi-word-link") continue;
+          const username = theData[i].full_name.split("/")[0];
+          if (username.toLowerCase() != "giansingh4710") continue;
           const readMeData =
             "https://raw.githubusercontent.com/" +
             theData[i].full_name +
@@ -92,7 +93,7 @@
 
       function putDataOnScreen(theData) {
         const thumbnails = document.getElementById("thumbnails");
-        for (let i = 0; i < theData.length; i++) {
+        for (let i = 0; i < theData.length; i+=1) {
           const repo = theData[i];
           const [text, link] = getTextNLink(repo[2]);
           const divs = document.createElement("div");
