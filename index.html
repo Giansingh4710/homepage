@@ -44,13 +44,105 @@
               ><span class="label">Instagram</span></a
             >
           </li>
+          <li>
+            <a
+              href="https://www.instagram.com/giansingh4710/"
+              class="icon style2 fa-instagram"
+              target="_blank"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <!--<li><a href="#" class="icon style2 fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon style2 fa-envelope-o" target="_blank"><span class="label">Email</span></a></li>-->
         </ul>
       </header>
 
       <!-- Main -->
       <section id="main">
         <!-- Thumbnails -->
-        <section class="thumbnails" id="thumbnails"></section>
+        <section class="thumbnails">
+          <div>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/tree/master/SikhStuff/akj"
+              target="_blank"
+            >
+              <img src="images/thumbs/01.jpg" alt="" />
+              <h3>
+                This folder has all things that I scraped from akj.org. One file
+                takes all the audiobooks and downloads all of them. Another file
+                downloads all the Keertan when you put the name of a Keertani
+              </h3>
+            </a>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/tree/master/ticTactoe"
+              target="_blank"
+            >
+              <img src="images/thumbs/02.jpg" alt="" />
+              <h3>My attempt at tic tac toe</h3>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/blob/master/SikhStuff/GurmatVecharToSD.py"
+              target="_blank"
+            >
+              <img src="images/thumbs/03.jpg" alt="" />
+              <h3>
+                Instead of downloading each individual track from
+                gurmatveechar.com, you can now download folders. If you put a
+                link, from gurmatveechar.com that has all the files you would
+                like to download, into this program, it will download all the
+                files for you automaticlly.
+              </h3>
+            </a>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/blob/master/PasswordStuff/passwordGen.py"
+              target="_blank"
+            >
+              <img src="images/thumbs/04.jpg" alt="" />
+              <h3>Made a password generator.</h3>
+            </a>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/blob/master/PasswordStuff/getpassword.py"
+              target="_blank"
+            >
+              <img src="images/thumbs/05.jpg" alt="" />
+              <h3>
+                This program will give you back the password that was generated
+                through the password generator.
+              </h3>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/tree/master/SikhStuff/fourms"
+              target="_blank"
+            >
+              <img src="images/thumbs/06.jpg" alt="" />
+              <h3>
+                I remember scrolling through various forums and articles of
+                Gurmat Bibek(a relegious organization) and other sites as the
+                veechars(views) were interesting. This program goes through all
+                the forums and articles from websites such as Tapoban , Gurmat
+                Bibek, Sikh Unity and makes them searchable by topic and author.
+                I made a GUI for this program.
+              </h3>
+            </a>
+            <a
+              href="https://github.com/Giansingh4710/small-projects/tree/master/Hangman"
+              target="_blank"
+            >
+              <img src="images/thumbs/07.jpg" alt="" />
+              <h3>
+                This was my first project trying to make a hangman game. I
+                originally made it with the turtle module but then switched to
+                displaying the hangman on the console. I included a feature
+                where the hangman would be drawn as long as the attempts to
+                guess the word are less than 15
+              </h3>
+            </a>
+          </div>
+        </section>
       </section>
 
       <!-- Footer -->
@@ -58,97 +150,13 @@
         <p>
           &copy; This was made through the 100% kirpa of
           <a href="https://www.sikhitothemax.org/shabad?id=961"> ਵਾਹਿਗੁਰੂ</a>
-          Ji.
+          Ji. They did kirpa through
+          <a href="https://pages.github.com/" target="_blank">Github pages</a>
+          and <a href="https://templated.co/" target="_blank">TEMPLATED</a>
         </p>
         <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
       </footer>
     </div>
-    <script>
-      // get all the repos that are stared on my github. Then get the readme file in the main branch. All readme file need to have all content above and the last line needs to be an image
-      const started = "https://api.github.com/users/Giansingh4710/starred";
-      fetch(started)
-        .then((response) => response.json())
-        .then((data) => getAllRepos(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
-
-      async function getAllRepos(theData) {
-        const toShowOnScreen = [];
-        for (let i = 0; i < theData.length; i++) {
-          const urlToRepo = theData[i].html_url;
-          const repoName = theData[i].full_name.split("/")[1];
-          const username = theData[i].full_name.split("/")[0];
-          if (username.toLowerCase() != "giansingh4710") continue;
-          const readMeData =
-            "https://raw.githubusercontent.com/" +
-            theData[i].full_name +
-            "/main/README.md";
-          // const lst = []; //index 0 of lst= text in readme. index1= hyperlink to image in readme.
-          const readMeTextPromise = readMeFileToStr(readMeData); //puts data into lst
-          let readMeText;
-          await readMeTextPromise.then((res) => (readMeText = res));
-          const dataForRepo = [repoName, urlToRepo, readMeText];
-          toShowOnScreen.push(dataForRepo);
-        }
-        putDataOnScreen(toShowOnScreen);
-      }
-
-      function putDataOnScreen(theData) {
-        const thumbnails = document.getElementById("thumbnails");
-        for (let i = 0; i < theData.length; i+=1) {
-          const repo = theData[i];
-          const [text, link] = getTextNLink(repo[2]);
-          const divs = document.createElement("div");
-          divs.innerHTML = `
-            <a id=theMainBox href="${repo[1]}" target="_blank">
-              <img src="${link}" alt="" />
-              <h1>Title</h1>
-              <h3>
-                ${text}
-              </h3>
-            </a>
-            <a target="_blank" href="https://sdoji.xyz">Link To Git Repo </a>`;
-          thumbnails.appendChild(divs);
-        }
-      }
-
-      function parseMarkdown(markdownText) {
-        const htmlText = markdownText
-          .replace(/^### (.*$)/gim, "<h3>$1</h3>")
-          .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-          .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-          .replace(/^\> (.*$)/gim, "<blockquote>$1</blockquote>")
-          .replace(/\*\*(.*)\*\*/gim, "<b>$1</b>")
-          .replace(/\*(.*)\*/gim, "<i>$1</i>")
-          .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-          .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-          .replace(/\n$/gim, "<br />");
-
-        return htmlText.trim();
-      }
-
-      function getTextNLink(str) {
-        const theLst = str.split("\n");
-        let i = theLst.length - 1;
-        while (theLst[i] == "") {
-          //if there are extra lines without spaces
-          i -= 1;
-        }
-        const text = theLst.slice(0, i).join("");
-
-        const picLink = theLst[i].split("]")[1];
-        const link = picLink.slice(1, -1); //remove the ![image] from the markdown
-
-        return [text, link];
-      }
-
-      async function readMeFileToStr(linkToFile, lst) {
-        let theText;
-        await fetch(linkToFile)
-          .then((res) => res.text())
-          .then((data) => (theText = data))
-          .catch((err) => console.log(err));
-        return theText;
-      }
-    </script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -157,3 +165,4 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
