@@ -85,11 +85,15 @@
             const urlToRepo = theData[i].html_url;
             const repoName = theData[i].full_name.split("/")[1];
             const username = theData[i].full_name.split("/")[0];
+            const default_branch = theData[i].default_branch;
             if (username.toLowerCase() != "giansingh4710") continue;
             const readMeData =
               "https://raw.githubusercontent.com/" +
               theData[i].full_name +
-              "/main/README.md";
+              "/" +
+              default_branch +
+              "/README.md";
+            console.log(readMeData);
             // const lst = []; //index 0 of lst= text in readme. index1= hyperlink to image in readme.
             const readMeTextPromise = readMeFileToStr(readMeData); //puts data into lst
             let readMeText;
