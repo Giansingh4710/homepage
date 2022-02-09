@@ -127,19 +127,19 @@
                 repo["readMeText"]
               );
               divs.innerHTML += `
-                                <a id=theMainBox href="${linkToWebsite}" target="_blank">
-                                <img src="${linkToPic}" alt="" />
-                                <h1 style="font-size: 20px">${repo[
-                                  "reponame"
-                                ].toUpperCase()}</h1>
-                                <h3>
-                                ${text}
-                                </h3>
-                                </a>
-                                <a target="_blank" href="${
-                                  repo["urlToRepo"]
-                                }">Link To Git Repo </a>
-                                `;
+              <a id=theMainBox href="${linkToWebsite}" target="_blank">
+                <img src="${linkToPic}" alt="" />
+                <h1 style="font-size: 18px">${repo[
+                  "reponame"
+                ].toUpperCase()}</h1>
+                <h3>
+                ${text}
+                </h3>
+              </a>
+              <a target="_blank" href="${
+                repo["urlToRepo"]
+              }">Link To Git Repo </a>
+              `;
             } catch (err) {
               console.log(
                 `Error with Repo: ${repo["reponame"]}\nReadme.md file not formated correctly`
