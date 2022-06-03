@@ -58,6 +58,8 @@
         <!-- Thumbnails -->
         <section class="thumbnails" id="thumbnails"></section>
       </section>
+        <h1>Other Projects</h1>
+      <ol id='otherPages'></ol>
 
       <!-- Footer -->
       <footer id="footer">
@@ -70,14 +72,13 @@
       </footer>
     </div>
     <script>
-      const started = "https://api.github.com/users/Giansingh4710/starred";
-
       const allReposAPI="https://api.github.com/users/Giansingh4710/repos";
       fetch(allReposAPI)
         .then((response) => response.json())
         .then((data) => getRepos(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
 
-      const allRepos=[ 
+      const ReposToShow=[ 
+        //must follow the read me format where first line is link to project, then regular text and last line is an image
         "https://github.com/Giansingh4710/kathaData",
         "https://github.com/Giansingh4710/IT202-003",
         "https://github.com/Giansingh4710/sdo-ji",
@@ -85,12 +86,28 @@
         "https://github.com/Giansingh4710/santhiya-pothi",
         "https://github.com/Giansingh4710/santjikatha",
         "https://github.com/Giansingh4710/GurmatVeecharDownloader",
+
+      ];
+
+      const otherRepos=[
+        //must use github pages to be in list
+        "https://github.com/Giansingh4710/santhiya-pothi-web",
+        "https://github.com/Giansingh4710/searchGb",
+        "https://github.com/Giansingh4710/sggsji-khata",
+        "https://github.com/Giansingh4710/website",
+
       ];
 
       async function getRepos(repos) {
-        const toShowOnScreen = [];
+        const mainCards = [];
+        const otherPages=[]
         for(const repo of repos){
-          if(!allRepos.includes(repo.html_url)) continue;
+          if(otherRepos.includes(repo.html_url)){
+            const repoName = repo.full_name.split("/")[1];
+            otherPages.push("https://giansingh4710.github.io/"+repoName);
+            continue;
+          }
+          if(!ReposToShow.includes(repo.html_url)) continue;
 
           const urlToRepo = repo.html_url;
           const repoName = repo.full_name.split("/")[1];
@@ -106,43 +123,19 @@
             urlToRepo: urlToRepo,
             readMeText: readMeText,
           };
-          toShowOnScreen.push(dataForRepo);
+          mainCards.push(dataForRepo);
         }
-        putDataOnScreen(toShowOnScreen);
+        putDataOnScreen(mainCards);
+        showLinks(otherPages);
       }
 
-      async function getAllRepos(theData) {
-        const toShowOnScreen = [];
-        console.log(theData[0].full_name)
-        for (let i = 0; i < theData.length; i++) {
-          try {
-            const urlToRepo = theData[i].html_url;
-            const repoName = theData[i].full_name.split("/")[1];
-            const username = theData[i].full_name.split("/")[0];
-            const default_branch = theData[i].default_branch;
-            if (username.toLowerCase() != "giansingh4710") continue;
-            const readMeData =
-              "https://raw.githubusercontent.com/" +
-              theData[i].full_name +
-              "/" +
-              default_branch +
-              "/README.md";
-            
-            // const lst = []; //index 0 of lst= text in readme. index1= hyperlink to image in readme.
-            const readMeTextPromise = readMeFileToStr(readMeData); //puts data into lst
-            let readMeText;
-            await readMeTextPromise.then((res) => (readMeText = res));
-            const dataForRepo = {
-              reponame: repoName,
-              urlToRepo: urlToRepo,
-              readMeText: readMeText,
-            };
-            toShowOnScreen.push(dataForRepo);
-          } catch (err) {
-            console.log(err);
-          }
+      function showLinks(links){
+        const ol=document.getElementById("otherPages");
+        for (const link of links){
+          const li=document.createElement('li');
+          li.innerHTML=`<a href="${link}">${link}</a>`;
+          ol.appendChild(li);
         }
-        putDataOnScreen(toShowOnScreen);
       }
 
       function putDataOnScreen(theData) {
@@ -163,17 +156,10 @@
               divs.innerHTML += `
               <a id=theMainBox href="${linkToWebsite}" target="_blank">
                 <img src="${linkToPic}" alt="" />
-                <h1 style="font-size: 18px">${repo[
-                  "reponame"
-                ].toUpperCase()}</h1>
-                <h3>
-                ${text}
-                </h3>
+                <h1 style="font-size: 18px">${repo["reponame"].toUpperCase()}</h1>
+                <h3>${text}</h3>
               </a>
-              <a target="_blank" href="${
-                repo["urlToRepo"]
-              }">Link To Git Repo </a>
-              `;
+              <a target="_blank" href="${repo["urlToRepo"] }">Link To Git Repo </a>`;
             } catch (err) {
               console.log(
                 `Error with Repo: ${repo["reponame"]}\nReadme.md file not formated correctly`
