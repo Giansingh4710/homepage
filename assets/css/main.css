@@ -9,9 +9,15 @@
 */
 
 /* Reset */
+#pic{
+  /*width:600px,*/
+  /*height:auto*/
+}
+
 .avatar {
+  /*
   position: relative;
-  /*animation-name: example;
+  animation-name: example;
   animation-duration: 3s;
   animation-fill-mode: forwards;
   */
@@ -31,9 +37,10 @@ p {
   display: block;
 }
 .avatar:hover {
-  transform: scale(
-    3
+  /*transform: scale(
+    2
   ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  */
 }
 
 html,
@@ -2796,7 +2803,7 @@ body.is-covered #wrapper {
 #header .avatar img {
   border-radius: 100%;
   display: block;
-  width: 10em;
+  /*width: 10em;*/
 }
 
 @media screen and (max-width: 1280px) {

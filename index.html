@@ -18,14 +18,14 @@
       <header id="header">
         <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
         <span class="avatar" id="pic"
-          ><img src="images/avatar.jpg" alt=""
+          ><img src="https://avatars.githubusercontent.com/u/73843250" alt="picture of Gian Singh"
         /></span>
         <h1>Welcome</h1>
         <h2>
           This website is a display of a few projects that I have done or am
           currently attempting.
           <p>
-            <a href="./assets/Gian_Singh_Resume2.DOCX.pdf">My Resume</a>
+            <a href="./assets/Gian_Singh_Resume.pdf">My Resume</a>
           </p>
 
           <p>
@@ -70,14 +70,50 @@
       </footer>
     </div>
     <script>
-      // get all the repos that are stared on my github. Then get the readme file in the main branch. All readme file need to have all content above and the last line needs to be an image
       const started = "https://api.github.com/users/Giansingh4710/starred";
-      fetch(started)
+
+      const allReposAPI="https://api.github.com/users/Giansingh4710/repos";
+      fetch(allReposAPI)
         .then((response) => response.json())
-        .then((data) => getAllRepos(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
+        .then((data) => getRepos(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
+
+      const allRepos=[ 
+        "https://github.com/Giansingh4710/kathaData",
+        "https://github.com/Giansingh4710/IT202-003",
+        "https://github.com/Giansingh4710/sdo-ji",
+        "https://github.com/Giansingh4710/learnGurmukhi",
+        "https://github.com/Giansingh4710/santhiya-pothi",
+        "https://github.com/Giansingh4710/santjikatha",
+        "https://github.com/Giansingh4710/GurmatVeecharDownloader",
+      ];
+
+      async function getRepos(repos) {
+        const toShowOnScreen = [];
+        for(const repo of repos){
+          if(!allRepos.includes(repo.html_url)) continue;
+
+          const urlToRepo = repo.html_url;
+          const repoName = repo.full_name.split("/")[1];
+          const default_branch = repo.default_branch;
+
+          const readMeLink ="https://raw.githubusercontent.com/" +
+            repo.full_name +"/" + default_branch + "/README.md";
+          const readMeTextPromise = readMeFileToStr(readMeLink);
+          let readMeText;
+          await readMeTextPromise.then((res) => (readMeText = res));
+          const dataForRepo = {
+            reponame: repoName,
+            urlToRepo: urlToRepo,
+            readMeText: readMeText,
+          };
+          toShowOnScreen.push(dataForRepo);
+        }
+        putDataOnScreen(toShowOnScreen);
+      }
 
       async function getAllRepos(theData) {
         const toShowOnScreen = [];
+        console.log(theData[0].full_name)
         for (let i = 0; i < theData.length; i++) {
           try {
             const urlToRepo = theData[i].html_url;
@@ -91,7 +127,7 @@
               "/" +
               default_branch +
               "/README.md";
-            console.log(readMeData);
+            
             // const lst = []; //index 0 of lst= text in readme. index1= hyperlink to image in readme.
             const readMeTextPromise = readMeFileToStr(readMeData); //puts data into lst
             let readMeText;
@@ -110,7 +146,7 @@
       }
 
       function putDataOnScreen(theData) {
-        console.log(theData);
+        //console.log(theData);
         const thumbnails = document.getElementById("thumbnails");
         const filesInEachDiv = Math.round(theData.length / 3);
         let indToStartFrom = 0;
@@ -186,7 +222,7 @@
         return [text, picLink, websiteLink];
       }
 
-      async function readMeFileToStr(linkToFile, lst) {
+      async function readMeFileToStr(linkToFile) {
         let theText;
         await fetch(linkToFile)
           .then((res) => res.text())
