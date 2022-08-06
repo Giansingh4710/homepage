@@ -5,223 +5,221 @@
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-  <head>
-    <title>With Grace from the Creator</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-  <body>
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="header">
-        <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
-        <span class="avatar" id="pic"
-          ><img src="https://avatars.githubusercontent.com/u/73843250" alt="picture of Gian Singh"
-        /></span>
-        <h1>Welcome</h1>
-        <h2>
-          This website is a display of a few projects that I have done or am
-          currently attempting.
-          <p>
-            <a href="./assets/Gian_Singh_Resume.pdf">My Resume</a>
-          </p>
 
-          <p>
-            <!-- <a href="https://github.com/Giansingh4710/small-projects">resume</a>-->
-            <br />
-          </p>
-        </h2>
+<head>
+  <title>With Grace from the Creator</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-        <ul class="icons">
-          <li>
-            <a
-              href="https://github.com/Giansingh4710"
-              class="icon style2 fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/gian-singh-b314a61b9/"
-              class="icon style2 fa-linkedin"
-              target="_blank"
-              ><span class="label">LinkedIn</span></a
-              >
-          </li>
-        </ul>
-      </header>
-
-      <!-- Main -->
-      <section id="main">
-        <!-- Thumbnails -->
-        <section class="thumbnails" id="thumbnails"></section>
-      </section>
-        <h1>Other Projects</h1>
-      <ol id='otherPages'></ol>
-
-      <!-- Footer -->
-      <footer id="footer">
+<body>
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
+      <span class="avatar" id="pic"><img src="https://avatars.githubusercontent.com/u/73843250"
+          alt="picture of Gian Singh" /></span>
+      <h1>Welcome</h1>
+      <h2>
+        This website is a display of a few projects that I have done or am
+        currently attempting.
         <p>
-          &copy; This was made through the 100% kirpa of
-          <a href="https://www.sikhitothemax.org/shabad?id=961"> ਵਾਹਿਗੁਰੂ</a>
-          Ji.
+          <a href="./assets/Gian_Singh_Resume.pdf">My Resume</a>
         </p>
-        <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
-      </footer>
-    </div>
-    <script>
-      const allReposAPI="https://api.github.com/users/Giansingh4710/repos";
-      fetch(allReposAPI)
+
+        <p>
+          <!-- <a href="https://github.com/Giansingh4710/small-projects">resume</a>-->
+          <br />
+        </p>
+      </h2>
+
+      <ul class="icons">
+        <li>
+          <a href="https://github.com/Giansingh4710" class="icon style2 fa-github"><span class="label">Github</span></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/gian-singh-b314a61b9/" class="icon style2 fa-linkedin"
+            target="_blank"><span class="label">LinkedIn</span></a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Main -->
+    <section id="main">
+      <!-- Thumbnails -->
+      <section class="thumbnails" id="thumbnails">
+          <div id="thumbnails_col1"></div>
+          <div id="thumbnails_col2"></div>
+          <div id="thumbnails_col3"></div>
+        </section>
+    </section>
+    <h1>Other Projects</h1>
+    <ol id="otherPages"></ol>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>
+        &copy; This was made through the 100% kirpa of
+        <a href="https://www.sikhitothemax.org/shabad?id=961"> ਵਾਹਿਗੁਰੂ</a>
+        Ji.
+      </p>
+      <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
+    </footer>
+  </div>
+  <script>
+    const ReposToShow = [
+      //must follow the ReadMe format where first line is link to project, then regular text and last line is an image
+      "Giansingh4710/sdo-ji",
+      "Giansingh4710/learnGurmukhi",
+      "Giansingh4710/santjikatha",
+      "Giansingh4710/santhiya-pothi",
+      "Giansingh4710/kathaData",
+      "Giansingh4710/IT202-003",
+    ];
+
+    const otherRepos = [
+      //must use github pages to be in list
+      "searchGb",
+      "sggsji-khata",
+      "website",
+      "hps",
+      "santhiya-pothi-web",
+    ];
+
+    ReposToShow.map(item => {
+      const apiLink = "https://api.github.com/repos/" + item
+      //https://api.github.com/repos/Giansingh4710/sdo-ji
+      fetch(apiLink)
         .then((response) => response.json())
-        .then((data) => getRepos(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
+        .then((data) => extractData(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
+    })
 
-      const ReposToShow=[ 
-        //must follow the read me format where first line is link to project, then regular text and last line is an image
-        "https://github.com/Giansingh4710/kathaData",
-        "https://github.com/Giansingh4710/IT202-003",
-        "https://github.com/Giansingh4710/sdo-ji",
-        "https://github.com/Giansingh4710/learnGurmukhi",
-        "https://github.com/Giansingh4710/santhiya-pothi",
-        "https://github.com/Giansingh4710/santjikatha",
-        "https://github.com/Giansingh4710/GurmatVeecharDownloader",
+    otherRepos.map(item => {
+      const githubpagesLink = "https://giansingh4710.github.io/" + item
+      const ol = document.getElementById("otherPages");
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${githubpagesLink}">${githubpagesLink}</a>`;
+      ol.appendChild(li);
+    })
 
-      ];
+    async function extractData(repo) {
+      const urlToRepo = repo.html_url;
+      const repoName = repo.full_name.split("/")[1];
+      const default_branch = repo.default_branch;
 
-      const otherRepos=[
-        //must use github pages to be in list
-        "https://github.com/Giansingh4710/santhiya-pothi-web",
-        "https://github.com/Giansingh4710/searchGb",
-        "https://github.com/Giansingh4710/sggsji-khata",
-        "https://github.com/Giansingh4710/website",
-        "https://github.com/Giansingh4710/hps",
-      ];
+      const readMeLink =
+        "https://raw.githubusercontent.com/" +
+        repo.full_name +
+        "/" +
+        default_branch +
+        "/README.md";
+      const readMeTextPromise = readMeFileToStr(readMeLink);
+      let readMeText;
+      await readMeTextPromise.then((res) => (readMeText = res));
+      const dataForRepo = {
+        reponame: repoName,
+        urlToRepo: urlToRepo,
+        readMeText: readMeText,
+      };
+      putDataOnScreen(dataForRepo)
+    }
 
-      async function getRepos(repos) {
-        const mainCards = [];
-        const otherPages=[]
-        for(const repo of repos){
-          if(otherRepos.includes(repo.html_url)){
-            const repoName = repo.full_name.split("/")[1];
-            otherPages.push("https://giansingh4710.github.io/"+repoName);
-            continue;
-          }
-          if(!ReposToShow.includes(repo.html_url)) continue;
-
-          const urlToRepo = repo.html_url;
-          const repoName = repo.full_name.split("/")[1];
-          const default_branch = repo.default_branch;
-
-          const readMeLink ="https://raw.githubusercontent.com/" +
-            repo.full_name +"/" + default_branch + "/README.md";
-          const readMeTextPromise = readMeFileToStr(readMeLink);
-          let readMeText;
-          await readMeTextPromise.then((res) => (readMeText = res));
-          const dataForRepo = {
-            reponame: repoName,
-            urlToRepo: urlToRepo,
-            readMeText: readMeText,
-          };
-          mainCards.push(dataForRepo);
+    function putDataOnScreen(repo) {
+      function getDivWithLeastAtags(){
+        //each div in thumbnails needs 3 a tags
+        const div1=document.getElementById("thumbnails_col1")
+        const div2=document.getElementById("thumbnails_col2")
+        const div3=document.getElementById("thumbnails_col3")
+        const div1a=div1.getElementsByTagName('a').length
+        const div2a=div2.getElementsByTagName('a').length
+        const div3a=div3.getElementsByTagName('a').length
+        // console.log(div1a,div2a,div3a)
+        // fill div1 first then div2 then div3
+        if(div1a===div2a && div2a===div3a){
+          console.log('div1')
+          return div1
         }
-        putDataOnScreen(mainCards);
-        showLinks(otherPages);
-      }
-
-      function showLinks(links){
-        const ol=document.getElementById("otherPages");
-        for (const link of links){
-          const li=document.createElement('li');
-          li.innerHTML=`<a href="${link}">${link}</a>`;
-          ol.appendChild(li);
+        if(div2a===div3a){
+          console.log('div2')
+          return div2
         }
+          console.log('div3')
+        return div3 //if they all have save default is div1
       }
-
-      function putDataOnScreen(theData) {
-        //console.log(theData);
-        const thumbnails = document.getElementById("thumbnails");
-        const filesInEachDiv = Math.round(theData.length / 3);
-        let indToStartFrom = 0;
-        let indToEndAt = filesInEachDiv;
-
-        for (let j = 0; j < 3; j += 1) {
-          const divs = document.createElement("div");
-          for (let i = indToStartFrom; i < indToEndAt; i++) {
-            const repo = theData[i];
-            try {
-              const [text, linkToPic, linkToWebsite] = getTextNLink(
-                repo["readMeText"]
-              );
-              divs.innerHTML += `
+      let div=getDivWithLeastAtags();// = document.createElement("div");
+      try {
+        const [text, linkToPic, linkToWebsite] = getTextNLink(
+          repo.readMeText
+        );
+        div.innerHTML += `
               <a id=theMainBox href="${linkToWebsite}" target="_blank">
                 <img src="${linkToPic}" alt="" />
-                <h1 style="font-size: 18px">${repo["reponame"].toUpperCase()}</h1>
+                <h1 style="font-size: 18px">${repo[
+            "reponame"
+          ].toUpperCase()}</h1>
                 <h3>${text}</h3>
               </a>
-              <a target="_blank" href="${repo["urlToRepo"] }">Link To Git Repo </a>`;
-            } catch (err) {
-              console.log(
-                `Error with Repo: ${repo["reponame"]}\nReadme.md file not formated correctly`
-              );
-            }
-          }
+              <a target="_blank" href="${repo["urlToRepo"]
+          }">Link To Git Repo </a>`;
 
-          indToStartFrom = indToEndAt;
-          indToEndAt = j == 1 ? theData.length : indToEndAt + filesInEachDiv;
-          thumbnails.appendChild(divs);
-        }
+      } catch (err) {
+        console.log(
+          `Error with Repo: ${repo["reponame"]}\nReadme.md file not formated correctly`
+        );
       }
+    }
 
-      function parseMarkdown(markdownText) {
-        const htmlText = markdownText
-          .replace(/^### (.*$)/gim, "<h3>$1</h3>")
-          .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-          .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-          .replace(/^\> (.*$)/gim, "<blockquote>$1</blockquote>")
-          .replace(/\*\*(.*)\*\*/gim, "<b>$1</b>")
-          .replace(/\*(.*)\*/gim, "<i>$1</i>")
-          .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-          .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-          .replace(/\n$/gim, "<br />");
+    function parseMarkdown(markdownText) {
+      const htmlText = markdownText
+        .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+        .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+        .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+        .replace(/^\> (.*$)/gim, "<blockquote>$1</blockquote>")
+        .replace(/\*\*(.*)\*\*/gim, "<b>$1</b>")
+        .replace(/\*(.*)\*/gim, "<i>$1</i>")
+        .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
+        .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
+        .replace(/\n$/gim, "<br />");
 
-        return htmlText.trim();
+      return htmlText.trim();
+    }
+
+    function getTextNLink(str) {
+      const theLst = str.split("\n");
+      let i = 0;
+      while (theLst[i] == false) {
+        i += 1;
       }
-
-      function getTextNLink(str) {
-        const theLst = str.split("\n");
-        let i = 0;
-        while (theLst[i] == false) {
-          i += 1;
-        }
-        let j = theLst.length - 1;
-        while (theLst[j] == false) {
-          //if there are extra lines without spaces
-          j -= 1;
-        }
-        const text = theLst.slice(i + 1, j).join("");
-
-        //remove the ![image] from the markdown
-        const websiteLink = theLst[i].split("]")[1].trim().slice(1, -1);
-        const picLink = theLst[j].split("]")[1].trim().slice(1, -1);
-        //console.log(websiteLink);
-        return [text, picLink, websiteLink];
+      let j = theLst.length - 1;
+      while (theLst[j] == false) {
+        //if there are extra lines without spaces
+        j -= 1;
       }
+      const text = theLst.slice(i + 1, j).join("");
 
-      async function readMeFileToStr(linkToFile) {
-        let theText;
-        await fetch(linkToFile)
-          .then((res) => res.text())
-          .then((data) => (theText = data))
-          .catch((err) => console.log(err));
-        return theText;
-      }
-    </script>
+      //remove the ![image] from the markdown
+      const websiteLink = theLst[i].split("]")[1].trim().slice(1, -1);
+      const picLink = theLst[j].split("]")[1].trim().slice(1, -1);
+      return [text, picLink, websiteLink];
+    }
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    async function readMeFileToStr(linkToFile) {
+      let theText;
+      await fetch(linkToFile)
+        .then((res) => res.text())
+        .then((data) => (theText = data))
+        .catch((err) => console.log(err));
+      return theText;
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
