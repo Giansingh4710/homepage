@@ -75,18 +75,20 @@
       "Giansingh4710/learnGurmukhi",
       "Giansingh4710/santjikatha",
       "Giansingh4710/santhiya-pothi",
-      "Giansingh4710/kathaData",
       "Giansingh4710/IT202-003",
+      "Giansingh4710/campPanth",
     ];
 
     const otherRepos = [
-      //must use github pages to be in list
-      "searchGb",
-      "sggsji-khata",
-      "website",
-      "hps",
-      "santhiya-pothi-web",
-      "paathPlayer"
+      // "https://giansingh4710.github.io/sggsji-khata",
+      // "https://giansingh4710.github.io/website",
+      "https://giansingh4710.github.io/searchGb",
+      "https://giansingh4710.github.io/hps",
+      "https://giansingh4710.github.io/santhiya-pothi-web",
+      "https://giansingh4710.github.io/paathPlayer",
+      "https://giansingh4710.github.io/randomshabad",
+      "https://giansingh4710.github.io/randomshabad/notlarrivar",
+      "https://giansingh4710.github.io/engBani/",
     ];
 
     ReposToShow.map(item => {
@@ -97,11 +99,10 @@
         .then((data) => extractData(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
     })
 
-    otherRepos.map(item => {
-      const githubpagesLink = "https://giansingh4710.github.io/" + item
+    otherRepos.map(link => {
       const ol = document.getElementById("otherPages");
       const li = document.createElement("li");
-      li.innerHTML = `<a href="${githubpagesLink}">${githubpagesLink}</a>`;
+      li.innerHTML = `<a href="${link}">${link}</a>`;
       ol.appendChild(li);
     })
 
