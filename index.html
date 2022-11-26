@@ -87,18 +87,19 @@
       "https://giansingh4710.github.io/santhiya-pothi-web",
       "https://giansingh4710.github.io/paathPlayer",
       "https://giansingh4710.github.io/randomshabad",
-      "https://giansingh4710.github.io/BhagatJiPothis/",
+      "https://giansingh4710.github.io/BhagatJiPothis",
       "https://giansingh4710.github.io/hps",
-      "https://giansingh4710.github.io/engBani/",
+      "https://giansingh4710.github.io/engBani",
       "https://giansingh4710.github.io/sggsji-khata",
+      "https://github.com/Giansingh4710/dotfiles",
     ];
 
     ReposToShow.map(item => {
-      const apiLink = "https://api.github.com/repos/" + item
-      //https://api.github.com/repos/Giansingh4710/sdo-ji
-      fetch(apiLink)
-        .then((response) => response.json())
-        .then((data) => extractData(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md
+      extractData(item)
+      /* const apiLink = "https://api.github.com/repos/" + item */
+      /* fetch(apiLink) */
+      /*   .then((response) => response.json()) */
+      /*   .then((data) => extractData(data)); //https://raw.githubusercontent.com/giansingh4710/santhiya-pothi/main/README.md */
     })
 
     otherRepos.map(link => {
@@ -109,16 +110,11 @@
     })
 
     async function extractData(repo) {
-      const urlToRepo = repo.html_url;
-      const repoName = repo.full_name.split("/")[1];
-      const default_branch = repo.default_branch;
+      const urlToRepo = "https://github.com/" + repo;
+      const repoName = repo.split("/")[1];
 
       const readMeLink =
-        "https://raw.githubusercontent.com/" +
-        repo.full_name +
-        "/" +
-        default_branch +
-        "/README.md";
+        "https://raw.githubusercontent.com/" +repo+"/main/README.md";
       const readMeTextPromise = readMeFileToStr(readMeLink);
       let readMeText;
       await readMeTextPromise.then((res) => (readMeText = res));
@@ -127,6 +123,7 @@
         urlToRepo: urlToRepo,
         readMeText: readMeText,
       };
+      console.log(dataForRepo)
       putDataOnScreen(dataForRepo)
     }
 
@@ -142,14 +139,11 @@
         // console.log(div1a,div2a,div3a)
         // fill div1 first then div2 then div3
         if(div1a===div2a && div2a===div3a){
-          console.log('div1')
           return div1
         }
         if(div2a===div3a){
-          console.log('div2')
           return div2
         }
-          console.log('div3')
         return div3 //if they all have save default is div1
       }
       let div=getDivWithLeastAtags();// = document.createElement("div");
