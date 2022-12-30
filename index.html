@@ -26,9 +26,8 @@
         This website is a display of a few projects that I have done or am
         currently attempting.
         <p>
-          <a href="./assets/resume.html">Resume</a>
-          <br>
-          <a href="./assets/resume.pdf">Resume(PDF)</a>
+          <a href="./assets/resume/resume.html">Resume</a>
+          <a href="./assets/resume/resume.pdf">Resume(PDF)</a>
         </p>
 
         <p>
@@ -42,8 +41,8 @@
           <a href="https://github.com/Giansingh4710" class="icon style2 fa-github"><span class="label">Github</span></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/giansingh4710/" class="icon style2 fa-linkedin"
-            target="_blank"><span class="label">LinkedIn</span></a>
+          <a href="https://www.linkedin.com/in/giansingh4710/" class="icon style2 fa-linkedin" target="_blank"><span
+              class="label">LinkedIn</span></a>
         </li>
       </ul>
     </header>
@@ -52,10 +51,10 @@
     <section id="main">
       <!-- Thumbnails -->
       <section class="thumbnails" id="thumbnails">
-          <div id="thumbnails_col1"></div>
-          <div id="thumbnails_col2"></div>
-          <div id="thumbnails_col3"></div>
-        </section>
+        <div id="thumbnails_col1"></div>
+        <div id="thumbnails_col2"></div>
+        <div id="thumbnails_col3"></div>
+      </section>
     </section>
     <h1>Other Projects</h1>
     <ol id="otherPages"></ol>
@@ -117,7 +116,7 @@
       const repoName = repo.split("/")[1];
 
       const readMeLink =
-        "https://raw.githubusercontent.com/" +repo+"/main/README.md";
+        "https://raw.githubusercontent.com/" + repo + "/main/README.md";
       const readMeTextPromise = readMeFileToStr(readMeLink);
       let readMeText;
       await readMeTextPromise.then((res) => (readMeText = res));
@@ -131,25 +130,25 @@
     }
 
     function putDataOnScreen(repo) {
-      function getDivWithLeastAtags(){
+      function getDivWithLeastAtags() {
         //each div in thumbnails needs 3 a tags
-        const div1=document.getElementById("thumbnails_col1")
-        const div2=document.getElementById("thumbnails_col2")
-        const div3=document.getElementById("thumbnails_col3")
-        const div1a=div1.getElementsByTagName('a').length
-        const div2a=div2.getElementsByTagName('a').length
-        const div3a=div3.getElementsByTagName('a').length
+        const div1 = document.getElementById("thumbnails_col1")
+        const div2 = document.getElementById("thumbnails_col2")
+        const div3 = document.getElementById("thumbnails_col3")
+        const div1a = div1.getElementsByTagName('a').length
+        const div2a = div2.getElementsByTagName('a').length
+        const div3a = div3.getElementsByTagName('a').length
         // console.log(div1a,div2a,div3a)
         // fill div1 first then div2 then div3
-        if(div1a===div2a && div2a===div3a){
+        if (div1a === div2a && div2a === div3a) {
           return div1
         }
-        if(div2a===div3a){
+        if (div2a === div3a) {
           return div2
         }
         return div3 //if they all have save default is div1
       }
-      let div=getDivWithLeastAtags();// = document.createElement("div");
+      let div = getDivWithLeastAtags();// = document.createElement("div");
       try {
         const [text, linkToPic, linkToWebsite] = getTextNLink(
           repo.readMeText
