@@ -107,7 +107,7 @@
     otherRepos.map(link => {
       const ol = document.getElementById("otherPages");
       const li = document.createElement("li");
-      li.innerHTML = `<a href="${link}">${link}</a>`;
+      li.innerHTML = `<a id='otherPagesLinks' href="${link}">${link}</a>`;
       ol.appendChild(li);
     })
 
