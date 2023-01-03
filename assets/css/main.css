@@ -8,21 +8,6 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
-/* Reset */
-#pic{
-  /*width:600px,*/
-  /*height:auto*/
-}
-
-.avatar {
-  /*
-  position: relative;
-  animation-name: example;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  */
-}
-
 @keyframes example {
   from {
     top: 2000px;
@@ -35,12 +20,6 @@ p {
   margin-bottom: -1em;
   margin-top: 0em;
   display: block;
-}
-.avatar:hover {
-  /*transform: scale(
-    2
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  */
 }
 
 html,
@@ -2798,12 +2777,20 @@ body.is-covered #wrapper {
   padding: 0.5em;
   border: solid 1px rgba(255, 255, 255, 0.25);
   background-color: rgba(255, 255, 255, 0.075);
+
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
 }
 
 #header .avatar img {
   border-radius: 100%;
   display: block;
-  /*width: 10em;*/
+  width: 15em;
+
+  position: relative;
+  animation-name: example;
+  animation-duration: 1.6s;
 }
 
 @media screen and (max-width: 1280px) {
