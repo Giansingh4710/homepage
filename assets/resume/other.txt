@@ -1,0 +1,25 @@
+**About Me**
+
+I am a highly motivated and versatile software engineer with a passion for coding and a strong foundation in computer science. I am seeking a coding job or software engineering position where I can leverage my technical skills and creativity to contribute to innovative projects. 
+
+**Technical Skills:**
+- Proficient in programming languages such as Python, Java, and JavaScript.
+- Experienced in web development, including front-end and back-end technologies.
+- Familiar with database management and SQL.
+- Strong problem-solving and algorithmic thinking skills.
+- Quick learner, always eager to adapt to new technologies and frameworks.
+
+**Communication and Teamwork:**
+I take pride in my excellent communication skills, both verbal and written, which enable me to convey complex technical ideas clearly and effectively. I am a dedicated team player, known for my enthusiasm, positivity, and ability to collaborate seamlessly with colleagues. My colleagues often describe me as fun to work with, and I believe that maintaining a positive and kind attitude fosters a productive work environment.
+
+**Continuous Learning:**
+In addition to my technical skills, I am committed to personal growth. I have a strong interest in learning about different religions and cultures, and I am actively engaged in strengthening my own faith as a Sikh. This dedication to understanding different perspectives has not only enriched my personal life but also enhanced my ability to work with diverse teams and clients.
+
+**Outside Interests:**
+Beyond my professional life, I have a passion for basketball, where teamwork and strategy resonate with my software engineering mindset. I believe that a healthy work-life balance contributes to overall productivity and well-being.
+
+I am excited about the opportunity to contribute my technical expertise, communication skills, and collaborative spirit to a dynamic coding or software engineering team. If you are looking for a dedicated, adaptable, and empathetic software engineer who thrives in a collaborative environment, I would welcome the opportunity to connect and discuss how I can contribute to your organization's success.
+
+------------------------
+Known Technologies:
+Python, C, C++, PHP, Bash, Java, HTML, CSS, Javascript, Node, React JS, React Native, Redux, Git, Linux, MySQL, Webscraping, Selenium, Vim
