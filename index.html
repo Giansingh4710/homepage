@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
 	Visualize by TEMPLATED
 	templated.co @templatedco
@@ -29,6 +29,7 @@
           currently attempting.
           <p>
             <a href="./assets/resume/resume.html">Resume</a>
+            <br />
             <a href="./assets/resume/resume.pdf">Resume(PDF)</a>
           </p>
 
@@ -83,19 +84,70 @@
 
   <script>
     const ReposToShow = [
-      //must follow the ReadMe format where first line is link to project, then regular text and last line is an image
-      'Giansingh4710/keerat',
-      'Giansingh4710/learnGurmukhi',
-      'Giansingh4710/santhiya-pothi',
-      'Giansingh4710/sms-shabad',
-      'keertan101/links',
-      // "Giansingh4710/campPanth",
-      // "Giansingh4710/sdo-ji",
-      // "Giansingh4710/santjikatha",
+      {
+        projectName: 'Keerat',
+        linkToProject: 'https://giansingh4710.github.io/keerat/',
+        linkToCodebase: 'https://github.com/Giansingh4710/keerat',
+        picLink:
+          'https://github.com/Giansingh4710/cs490_exercise_app_backend/assets/73843250/9baa7d1f-c95f-4b33-bf48-ae61dd97290d',
+        description:
+          'I have made many websites that have audios of different things having to do with the sikh faith. This website is basically a collection of all of those\nwebsites and more packaged into one. So if you wanna listen to scripture readings to singing(keertan) to discourse(katha). This site has it. Open to any suggestions on things to add or anything',
+      },
+      {
+        projectName: 'Santhiya Pothi',
+        linkToProject: 'https://santhiyapothi.xyz',
+        linkToCodebase: 'https://github.com/Giansingh4710/SanthiyaPothi',
+        picLink:
+          'https://github.com/Giansingh4710/keerat/assets/73843250/0ee8881d-b70e-4613-8010-0e87cb557cc5',
+        description:
+          'There are many apps out there that are available for reading Gurbani(The Sikh Scriptures). The only thing in this app is that it is focused on santhiya(a method of learning to read Gurbani). In this app you will also be able to upload your own pdfs so you have add other texts and scriptures. The App is available on iOS, Android and Web.',
+      },
+      {
+        projectName: 'SMS Shabad',
+        linkToProject: 'https://github.com/Giansingh4710/sms-shabad',
+        linkToCodebase: 'https://github.com/Giansingh4710/sms-shabad',
+        picLink:
+          'https://user-images.githubusercontent.com/73843250/188738641-1310e035-d2e9-4079-be13-512a1dd2084a.png',
+        description:
+          'I wanted a way to remember be grateful at all times. This script sends me a reminder as an SMS message to remember. While I was at it, I also made a way to send the daily hukamnama everyday to people.',
+      },
+      {
+        projectName: 'Learn Gurmukhi',
+        linkToProject: 'https://giansingh4710.github.io/learnGurmukhi/',
+        linkToCodebase: 'https://github.com/Giansingh4710/learnGurmukhi',
+        picLink:
+          'https://github.com/Giansingh4710/keerat/assets/73843250/ecbba287-64e9-4418-b4a6-fb3ca2e3167b',
+        description: `I made this site to help people who are learning Gurmukhi.
+
+            There are 3 main things you can do by using this website.
+
+            1.  Practice sounds of Akhars(character/letters) and combining letters
+            2.  Learn the days of the week in Gurmukhi
+            3.  Learn the Numbers in Gurmukhi`,
+      },
+      {
+        projectName: 'Keertan Links',
+        linkToProject: 'http://45.76.2.28/keertan101Links/',
+        linkToCodebase: 'https://github.com/keertan101/links',
+        picLink:
+          'https://user-images.githubusercontent.com/122420903/222057535-963528cd-1286-4d8b-b9f9-3f212aec7b78.jpeg',
+        description: "The instagram page Keertan101 posts keertan(hymns from sikh scriptures) and this site has the links to the files that are used to make the instagram posts."
+      },
+      {
+        projectName: 'Camp Panth',
+        linkToProject: 'https://giansingh4710.github.io/campPanth/',
+        linkToCodebase: 'https://github.com/giansingh4710/campPanth',
+        picLink:
+          'https://user-images.githubusercontent.com/73843250/188718455-b9fe4490-23d7-4c4a-8f8f-7565c1b3cded.png',
+        description: "This was the old landing page for the sikh camp, Camp Panth",
+      },
     ]
 
     const otherRepos = [
       'https://aisakirtan.com',
+      'https://sdoji.xyz',
+      'https://santjikatha.xyz/',
+
       'https://giansingh4710.github.io/AisaKirtan/',
       'https://giansingh4710.github.io/trackIndex/',
       'https://giansingh4710.github.io/searchGb',
@@ -107,6 +159,7 @@
       'https://giansingh4710.github.io/timeBasedKeertan',
       'https://giansingh4710.github.io/DecodeGurmukhi/',
       'https://giansingh4710.github.io/keerat_test/',
+
       'https://keertan101.github.io/links/',
       'https://github.com/Giansingh4710/dotfiles',
       'http://45.76.2.28',
@@ -114,7 +167,7 @@
     ]
 
     ReposToShow.map((item) => {
-      extractData(item)
+      putDataOnScreen(item)
     })
 
     otherRepos.map((link) => {
@@ -123,24 +176,6 @@
       li.innerHTML = `<a id='otherPagesLinks' href="${link}">${link}</a>`
       ol.appendChild(li)
     })
-
-    async function extractData(repo) {
-      const urlToRepo = 'https://github.com/' + repo
-      const repoName = repo.split('/')[1]
-
-      const readMeLink =
-        'https://raw.githubusercontent.com/' + repo + '/main/README.md'
-      const readMeTextPromise = readMeFileToStr(readMeLink)
-      let readMeText
-      await readMeTextPromise.then((res) => (readMeText = res))
-      const dataForRepo = {
-        reponame: repoName,
-        urlToRepo: urlToRepo,
-        readMeText: readMeText,
-      }
-      console.log(dataForRepo)
-      putDataOnScreen(dataForRepo)
-    }
 
     function putDataOnScreen(repo) {
       function getDivWithLeastAtags() {
@@ -161,74 +196,24 @@
         }
         return div3 //if they all have save default is div1
       }
+
       let div = getDivWithLeastAtags() // = document.createElement("div");
-      try {
-        const [text, linkToPic, linkToWebsite] = getTextNLink(repo.readMeText)
-        div.innerHTML += `
-              <a id=theMainBox href="${linkToWebsite}" target="_blank">
-                <img src="${linkToPic}" alt="" />
-                <h1 style="font-size: 18px">${repo[
-                  'reponame'
-                ].toUpperCase()}</h1>
-                <h3>${text}</h3>
-              </a>
-              <a target="_blank" href="${
-                repo['urlToRepo']
-              }">Link To Git Repo </a>`
-      } catch (err) {
-        console.log(
-          `Error with Repo: ${repo['reponame']}\nReadme.md file not formatted correctly`
-        )
-      }
+      const {
+        projectName,
+        linkToProject,
+        linkToCodebase,
+        picLink,
+        description,
+      } = repo
+
+      div.innerHTML += `
+                      <a id=theMainBox href="${linkToProject}" target="_blank">
+                        <img src="${picLink}" alt="" />
+                        <h1 style="font-size: 18px">${projectName}</h1>
+                        <h3>${description}</h3>
+                      </a>
+                      <a target="_blank" href="${linkToCodebase}">Link To Git Repo </a>`
     }
 
-    function parseMarkdown(markdownText) {
-      const htmlText = markdownText
-        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-        .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-        .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-        .replace(/\*(.*)\*/gim, '<i>$1</i>')
-        .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-        .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-        .replace(/\n$/gim, '<br />')
-
-      return htmlText.trim()
-    }
-
-    function getTextNLink(str) {
-      const theLst = str.split('\n')
-      let i = 0
-      while (theLst[i] == false) {
-        i += 1
-      }
-      let j = theLst.length - 1
-      while (theLst[j] == false) {
-        //if there are extra lines without spaces
-        j -= 1
-      }
-      const text = theLst.slice(i + 1, j).join('')
-
-      //remove the ![image] from the markdown
-      const websiteLink = theLst[i].split(']')[1].trim().slice(1, -1)
-      const picLink = theLst[j].split(']')[1].trim().slice(1, -1)
-      return [text, picLink, websiteLink]
-    }
-
-    async function readMeFileToStr(linkToFile) {
-      let theText
-      await fetch(linkToFile)
-        .then((res) => res.text())
-        .then((data) => (theText = data))
-        .catch((err) => console.log(err))
-      return theText
-    }
   </script>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.poptrox.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </html>
