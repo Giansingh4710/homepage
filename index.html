@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
 	Visualize by TEMPLATED
 	templated.co @templatedco
@@ -10,31 +10,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
-    <!-- Wrapper -->
     <div id="wrapper">
-      <!-- Header -->
       <header id="header">
-        <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
+        <p>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</p>
+        <p>With the Support of the Almight through the Gurus and the Shaheeds</p>
         <span class="avatar"
           ><img
             src="https://avatars.githubusercontent.com/u/73843250"
             alt="picture of Gian Singh"
         /></span>
-        <h1>Welcome</h1>
         <h2>
-          This website is a display of a few projects that I have done or am
-          currently attempting.
+          A Showcase Of Some Projects
           <p>
-            <a href="./assets/resume/resume.html">Resume</a>
-            <a href="./assets/resume/resume.pdf">Resume(PDF)</a>
-          </p>
-
-          <p>
-            <!-- <a href="https://github.com/Giansingh4710/small-projects">resume</a>-->
+            <a href="./assets/resume/resume.pdf">Resume (PDF)</a>
             <br />
+            <a href="./assets/resume/resume.html">Resume</a>
           </p>
         </h2>
 
@@ -57,45 +54,87 @@
         </ul>
       </header>
 
-      <!-- Main -->
       <section id="main">
-        <!-- Thumbnails -->
         <section class="thumbnails" id="thumbnails">
-          <div id="thumbnails_col1"></div>
-          <div id="thumbnails_col2"></div>
-          <div id="thumbnails_col3"></div>
+          <div class="thumbnailRow" id="thumbnails_row1"></div>
+          <div class="thumbnailRow" id="thumbnails_row2"></div>
+          <div class="thumbnailRow" id="thumbnails_row3"></div>
         </section>
       </section>
       <h1>Other Projects</h1>
       <ol id="otherPages"></ol>
 
-      <!-- Footer -->
       <footer id="footer">
         <p>
           &copy; This was made through the 100% kirpa of
           <a href="https://www.sikhitothemax.org/shabad?id=961"> ਵਾਹਿਗੁਰੂ</a>
           Ji.
         </p>
-        <p>ਵਾਹਿਗੁਰੂਜੀਕਾਖਾਲਸਾਵਾਹਿਗੁਰੂਜੀਕੀਫਤੇ||</p>
+        <p>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</p>
       </footer>
     </div>
   </body>
 
   <script>
-    const ReposToShow = [
-      //must follow the ReadMe format where first line is link to project, then regular text and last line is an image
-      'Giansingh4710/keerat',
-      'Giansingh4710/learnGurmukhi',
-      'Giansingh4710/santhiya-pothi',
-      'Giansingh4710/sms-shabad',
-      'keertan101/links',
-      // "Giansingh4710/campPanth",
-      // "Giansingh4710/sdo-ji",
-      // "Giansingh4710/santjikatha",
+    const reposToShow = [
+      {
+        projectName: 'Keerat',
+        linkToProject: 'https://giansingh4710.github.io/keerat/',
+        linkToCodebase: 'https://github.com/Giansingh4710/keerat',
+        picLink: 'https://github.com/Giansingh4710/cs490_exercise_app_backend/assets/73843250/9baa7d1f-c95f-4b33-bf48-ae61dd97290d',
+        description: 'This website is a comprehensive collection of audio content related to the Sikh faith, including scripture readings, singing (keertan), and discourse (katha). It combines various Sikh-themed websites into one platform. Suggestions for improvement are welcome.',
+      },
+      {
+        projectName: 'Santhiya Pothi',
+        linkToProject: 'https://santhiyapothi.xyz',
+        linkToCodebase: 'https://github.com/Giansingh4710/SanthiyaPothi',
+        picLink: 'https://github.com/Giansingh4710/keerat/assets/73843250/0ee8881d-b70e-4613-8010-0e87cb557cc5',
+        description: "This app focuses on Santhiya, a method for learning to read Gurbani (Sikh Scriptures). It's available on iOS, Android, and Web platforms, offering specialized tools for improving reading proficiency.",
+      },
+      {
+        projectName: 'Akhar Punjabi Games',
+        linkToProject: 'https://apps.apple.com/us/app/akhar-punjabi-games/id1615504498',
+        linkToCodebase: 'https://github.com/KhalisFoundation/akhar-punjabi-games',
+        picLink: 'https://github.com/Giansingh4710/keerat/assets/73843250/f79a5357-fb4c-47d1-82bb-7f0c07517b6d',
+        description: 'I created the foundation of the app, using React Native, during my internship at Khalis Foundation. This app hosts a collection of games specifically designed to facilitate learning of the Punjabi Alphabet. It is currently available on iOS.',
+      },
+      {
+        projectName: 'SMS Shabad',
+        linkToProject: 'https://github.com/Giansingh4710/sms-shabad',
+        linkToCodebase: 'https://github.com/Giansingh4710/sms-shabad',
+        picLink: 'https://user-images.githubusercontent.com/73843250/188738641-1310e035-d2e9-4079-be13-512a1dd2084a.png',
+        description: 'I developed a script that sends SMS reminders to cultivate gratitude throughout the day. Additionally, I integrated a feature to deliver daily messages to users.',
+      },
+      {
+        projectName: 'Learn Gurmukhi',
+        linkToProject: 'https://giansingh4710.github.io/learnGurmukhi/',
+        linkToCodebase: 'https://github.com/Giansingh4710/learnGurmukhi',
+        picLink: 'https://github.com/Giansingh4710/keerat/assets/73843250/ecbba287-64e9-4418-b4a6-fb3ca2e3167b',
+        description: 'This website assists those learning Gurmukhi with three main features: practicing Akhars (letters) and letter combinations, learning the days of the week, and mastering numbers in Gurmukhi.',
+      },
+      {
+        projectName: 'Keertan Links',
+        linkToProject: 'http://45.76.2.28/keertan101Links/',
+        linkToCodebase: 'https://github.com/keertan101/links',
+        picLink: 'https://user-images.githubusercontent.com/122420903/222057535-963528cd-1286-4d8b-b9f9-3f212aec7b78.jpeg',
+        description: 'This site provides links to the files used in the keertan (hymns from Sikh scriptures) posts on the Instagram page Keertan101.',
+      },
+      {
+        projectName: 'Camp Panth',
+        linkToProject: 'https://giansingh4710.github.io/campPanth/',
+        linkToCodebase: 'https://github.com/giansingh4710/campPanth',
+        picLink:
+          'https://user-images.githubusercontent.com/73843250/188718455-b9fe4490-23d7-4c4a-8f8f-7565c1b3cded.png',
+        description:
+          'This was the previous landing page for the Sikh camp, Camp Panth. The new website can be found at panth.camp.',
+      },
     ]
 
     const otherRepos = [
       'https://aisakirtan.com',
+      'https://sdoji.xyz',
+      'https://santjikatha.xyz/',
+
       'https://giansingh4710.github.io/AisaKirtan/',
       'https://giansingh4710.github.io/trackIndex/',
       'https://giansingh4710.github.io/searchGb',
@@ -107,15 +146,12 @@
       'https://giansingh4710.github.io/timeBasedKeertan',
       'https://giansingh4710.github.io/DecodeGurmukhi/',
       'https://giansingh4710.github.io/keerat_test/',
+
       'https://keertan101.github.io/links/',
       'https://github.com/Giansingh4710/dotfiles',
       'http://45.76.2.28',
       'http://45.76.2.28/copyPaste/',
     ]
-
-    ReposToShow.map((item) => {
-      extractData(item)
-    })
 
     otherRepos.map((link) => {
       const ol = document.getElementById('otherPages')
@@ -124,111 +160,43 @@
       ol.appendChild(li)
     })
 
-    async function extractData(repo) {
-      const urlToRepo = 'https://github.com/' + repo
-      const repoName = repo.split('/')[1]
+    reposToShow.map((item) => {
+      putDataOnScreen(item)
+    })
 
-      const readMeLink =
-        'https://raw.githubusercontent.com/' + repo + '/main/README.md'
-      const readMeTextPromise = readMeFileToStr(readMeLink)
-      let readMeText
-      await readMeTextPromise.then((res) => (readMeText = res))
-      const dataForRepo = {
-        reponame: repoName,
-        urlToRepo: urlToRepo,
-        readMeText: readMeText,
-      }
-      console.log(dataForRepo)
-      putDataOnScreen(dataForRepo)
-    }
-
-    function putDataOnScreen(repo) {
+    function putDataOnScreen({
+      projectName,
+      linkToProject,
+      linkToCodebase,
+      picLink,
+      description,
+    }) {
       function getDivWithLeastAtags() {
-        //each div in thumbnails needs 3 a tags
-        const div1 = document.getElementById('thumbnails_col1')
-        const div2 = document.getElementById('thumbnails_col2')
-        const div3 = document.getElementById('thumbnails_col3')
-        const div1a = div1.getElementsByTagName('a').length
-        const div2a = div2.getElementsByTagName('a').length
-        const div3a = div3.getElementsByTagName('a').length
-        // console.log(div1a,div2a,div3a)
-        // fill div1 first then div2 then div3
-        if (div1a === div2a && div2a === div3a) {
+        const div1 = document.getElementById('thumbnails_row1')
+        const div2 = document.getElementById('thumbnails_row2')
+        const div3 = document.getElementById('thumbnails_row3')
+        const div1a = div1.getElementsByClassName('thumbnail').length
+        const div2a = div2.getElementsByClassName('thumbnail').length
+        const div3a = div3.getElementsByClassName('thumbnail').length
+
+        if (div1a < 3) {
           return div1
-        }
-        if (div2a === div3a) {
+        } else if (div2a < 6) {
           return div2
         }
-        return div3 //if they all have save default is div1
+        return div3
       }
-      let div = getDivWithLeastAtags() // = document.createElement("div");
-      try {
-        const [text, linkToPic, linkToWebsite] = getTextNLink(repo.readMeText)
-        div.innerHTML += `
-              <a id=theMainBox href="${linkToWebsite}" target="_blank">
-                <img src="${linkToPic}" alt="" />
-                <h1 style="font-size: 18px">${repo[
-                  'reponame'
-                ].toUpperCase()}</h1>
-                <h3>${text}</h3>
-              </a>
-              <a target="_blank" href="${
-                repo['urlToRepo']
-              }">Link To Git Repo </a>`
-      } catch (err) {
-        console.log(
-          `Error with Repo: ${repo['reponame']}\nReadme.md file not formatted correctly`
-        )
-      }
-    }
 
-    function parseMarkdown(markdownText) {
-      const htmlText = markdownText
-        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-        .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-        .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-        .replace(/\*(.*)\*/gim, '<i>$1</i>')
-        .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-        .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-        .replace(/\n$/gim, '<br />')
-
-      return htmlText.trim()
-    }
-
-    function getTextNLink(str) {
-      const theLst = str.split('\n')
-      let i = 0
-      while (theLst[i] == false) {
-        i += 1
-      }
-      let j = theLst.length - 1
-      while (theLst[j] == false) {
-        //if there are extra lines without spaces
-        j -= 1
-      }
-      const text = theLst.slice(i + 1, j).join('')
-
-      //remove the ![image] from the markdown
-      const websiteLink = theLst[i].split(']')[1].trim().slice(1, -1)
-      const picLink = theLst[j].split(']')[1].trim().slice(1, -1)
-      return [text, picLink, websiteLink]
-    }
-
-    async function readMeFileToStr(linkToFile) {
-      let theText
-      await fetch(linkToFile)
-        .then((res) => res.text())
-        .then((data) => (theText = data))
-        .catch((err) => console.log(err))
-      return theText
+      const div = getDivWithLeastAtags()
+      div.innerHTML += `
+                <div class='thumbnail'>
+                    <a href="${linkToProject}" target="_blank">
+                      <img src="${picLink}" alt="" />
+                      <h1>${projectName}</h1>
+                      <p>${description}</p>
+                    </a>
+                    <a target="_blank" href="${linkToCodebase}">Link To Git Repo </a>
+                </div>`
     }
   </script>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.poptrox.min.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </html>
