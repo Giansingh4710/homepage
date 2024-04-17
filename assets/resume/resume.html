@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,16 +26,16 @@
       }
 
       #infoHeader {
-        background-color: lightgray;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding-left: 1em;
       }
 
       .sectionHeading {
         border-bottom: 3px solid #ccc;
         color: black;
-        text-shadow: 2px 0 black;
-        letter-spacing: 2px;
         font-weight: bold;
-        /* margin-top: -0.5em; */
+        font-size: 2em;
       }
 
       .sectionHeadingEdu {
@@ -43,7 +43,7 @@
       }
 
       .sectionData {
-        margin-top: -0.5em;
+        margin-top: -1em;
       }
     </style>
     <!-- for icons -->
@@ -54,7 +54,7 @@
   </head>
 
   <body>
-    <img id="qr" src="qr.png" alt="qr code" />
+    <img id="qr" src="qr.png" alt="qr code. that take you to resume PDF" />
     <header>
       <h1>Gian Singh</h1>
       <h2>Software Engineer</h2>
@@ -73,53 +73,26 @@
     </header>
 
     <section>
-      <h3 class="sectionHeading">Education</h3>
-      <h3>B.S Computer Science</h3>
-      <h4 class="sectionHeadingEdu">
-        New Jersey Institute of Technology (Expected Dec 2024)
-      </h4>
-      <h4>Relevant Coursework</h4>
-      <ul class="sectionHeadingEdu">
-        <li>
-          Internet Applications (IT 202 - Browser and Client Side Technologies)
-        </li>
-        <li>
-          Programming Language Concepts (CS280 - Implemented our own Interpreter
-          in C++)
-        </li>
-        <li>Database System Design & Management (CS 331)</li>
-        <li>
-          Intro to Computer Systems (CS 350 - Understanding Computer
-          Architecture using Assembly and C)
-        </li>
-        <li>Advanced Data Structures and Algorithms (CS 435)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3 class="sectionHeading">Technical Skills</h3>
-      <ul class="sectionData">
-        <li>
-          Experienced in web development, including front-end and back-end
-          technologies.
-        </li>
-        <li>Familiar with database management and SQL.</li>
-        <li>
-          Proficient in programming languages: Python, C/C++, PHP, Bash, Java
-        </li>
-        <li>
-          Strong command of web technologies: HTML, CSS, JavaScript, Node.js,
-          React JS, React Native, Redux, Git; Linux environment experience;
-          Azure, MySQL and Selenium proficiency; efficient coding with Vim
-        </li>
-      </ul>
-    </section>
-
-    <section>
       <h3 class="sectionHeading">Experience</h3>
       <div class="sectionData">
         <div class="experience">
-          <h3>Software Engineer Intern at Logiware Inc: July 2023 - Dec 2023</h3>
+          <h3>Full Stack Developer at EventGames.io : Jan 2024 - Present</h3>
+          <ul>
+            <li>
+              Maintained and enhanced interactive 3D games using Three.js and React,
+              ensuring optimal performance, bug-free experiences, and seamless
+              deployment for client companies
+            </li>
+            <li>
+              Created a customizable 3D endless runner game similar to Subway
+              Surfers, offering companies the opportunity to showcase their
+              logos and advertisements, thereby increasing its market appeal and
+              attracting potential buyers.
+            </li>
+          </ul>
+        </div>
+        <div class="experience">
+          <h3>Backend Engineer Intern at Logiware Inc: July 2023 - Dec 2023</h3>
           <ul>
             <li>
               Developed automated test scripts using Selenium WebDriver in Java
@@ -127,7 +100,7 @@
               applications.
             </li>
             <li>
-              Successfully refactored and optimized existing test codebase to
+              Successfully refactored and optimized the existing codebase to
               enhance maintainability and reduce redundancy, resulting in more
               efficient test suites.
             </li>
@@ -154,7 +127,7 @@
           </ul>
         </div>
         <div class="experience">
-          <h3>Computer Science Tutoring at NJIT: Jan 2021 - May 2021</h3>
+          <h3>Computer Science Tutor at NJIT: Jan 2021 - May 2021</h3>
           <ul>
             <li>
               Tutored Courses which taugh Python, Java and Computer Science
@@ -173,14 +146,19 @@
       <h3 class="sectionHeading">Projects</h3>
       <ul class="sectionData">
         <li>
-          Wanted a Specific way to read the Sikh Scriptures so made an
-          Application (available on IOS/Android/Web) to do so. The App is used
-          by hunderds of users daily. For more information, visit
-          <a href="https://santhiyapothi.xyz/">SanthiyaPothi.xyz</a>
+          <a href="https://santhiyapothi.xyz/">SanthiyaPothi.xyz</a>, an
+          application from which you can learn Santhiya, a method for learning
+          to read Gurbani (Sikh Scriptures)
         </li>
         <li>
-          <a href="https://keerat.xyz">Keerat.xyz</a>, an audio platform that
-          has alot of vintage divine music, discourse and more!!!
+          <a href="https://keerat.xyz">Keerat.xyz</a>, an audio platform for
+          Sikh Related Audio. Used by hundreds of users daily.
+        </li>
+        <li>
+          <a
+            href="https://apps.apple.com/us/app/akhar-punjabi-games/id1615504498"
+            >Akhar Jor</a>, the app I worked on at Khalis Foundation, which is a vocabulary
+          game for anyone who wants to learn Punjabi.
         </li>
 
         <li>
@@ -194,5 +172,41 @@
         </li>
       </ul>
     </section>
+
+    <section>
+      <h3 class="sectionHeading">Education</h3>
+      <h3>B.S Computer Science</h3>
+      <h4 class="sectionHeadingEdu">
+        New Jersey Institute of Technology (Graduating Dec 2024)
+      </h4>
+      <h4>Relevant Coursework</h4>
+      <ul class="sectionHeadingEdu">
+        <li>Advanced Data Structures and Algorithms (CS 435)</li>
+        <li>Android Application Development (CS 388)</li>
+        <li>Advanced Database Systems (CS 434)</li>
+        <li>
+          Internet Applications (IT 202 - Browser and Client Side Technologies)
+        </li>
+        <li>
+          Programming Language Concepts (CS280 - Implemented our own Interpreter
+          in C++)
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="sectionHeading">Technical Skills</h3>
+      <ul class="sectionData">
+        <li>
+          Experienced in web development, including front-end and back-end
+          technologies.
+        </li>
+        <li>Familiar with database management and SQL, Android and iOS development, and Dev Ops</li>
+        <li>
+          Strong command of: python, c/c++, java, bash, java, android compose, html, css, javascript, node.js, react js, react native, redux, git, vim, azure, mysql, selenium and much more
+        </li>
+      </ul>
+    </section>
+
   </body>
 </html>
