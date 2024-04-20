@@ -29,6 +29,12 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         padding-left: 1em;
+        display: flex;
+        justify-content: center;
+      }
+
+      .headerItem {
+        margin-right: 4.5em;
       }
 
       .sectionHeading {
@@ -39,7 +45,8 @@
       }
 
       .sectionHeadingEdu {
-        margin-top: -1em;
+        margin-top: -0.5em;
+        /* margin-bottom: -0.5em; */
       }
 
       .sectionData {
@@ -58,19 +65,69 @@
     <header>
       <h1>Gian Singh</h1>
       <h2>Software Engineer</h2>
-      <p id="infoHeader">
-        <i class="fa fa-envelope"></i>
-        <a href="mailto:gs4@njit.edu ">gs4@njit.edu</a> |
-        <i class="fa fa-globe"></i>
-        <a href="https://giansingh4710.xyz">giansingh4710.xyz</a> |
-        <i class="fa fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/giansingh4710">LinkedIn</a>|
-        <i class="fa fa-github"></i>
-        <a href="https://github.com/Giansingh4710">Github</a>|
-        <i class="fa fa-home"></i>
-        Oakland, New Jersey
-      </p>
+      <div id="infoHeader">
+        <div class="headerItem">
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:gs4@njit.edu ">gs4@njit.edu</a> |
+        </div>
+        <div class="headerItem">
+          <i class="fa fa-globe"></i>
+          <a href="https://giansingh4710.xyz">giansingh4710.xyz</a> |
+        </div>
+        <div class="headerItem">
+          <i class="fa fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/giansingh4710">LinkedIn</a>|
+        </div>
+        <div class="headerItem">
+          <i class="fa fa-github"></i>
+          <a href="https://github.com/Giansingh4710">Github</a>|
+        </div>
+        <div class="headerItem">
+          <i class="fa fa-home"></i>
+          Oakland, New Jersey
+        </div>
+      </div>
     </header>
+
+    <section>
+      <h3 class="sectionHeading">Education</h3>
+      <h3>
+        B.S Computer Science : New Jersey Institute of Technology (Graduating
+        Dec 2024)
+      </h3>
+      <h4 class="sectionHeadingEdu">Relevant Coursework</h4>
+      <ul class="sectionHeadingEdu">
+        <li>Advanced Data Structures and Algorithms (CS 435)</li>
+        <li>
+          Internet Applications (IT 202 - Browser and Client Side Technologies)
+        </li>
+        <li>
+          Programming Language Concepts (CS280 - Implemented our own Interpreter
+          in C++)
+        </li>
+        <li>Android Application Development (CS 388)</li>
+        <li>Advanced Database Systems (CS 434)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="sectionHeading">Technical Skills</h3>
+      <ul class="sectionData">
+        <li>
+          Experienced in web development, including front-end and back-end
+          technologies.
+        </li>
+        <li>
+          Familiar with database management and SQL, Android and iOS
+          development, and Dev Ops
+        </li>
+        <li>
+          Strong command of: python, c/c++, java, bash, java, android compose,
+          html, css, javascript, node.js, react js, react native, redux, git,
+          vim, azure, mysql, selenium and much more
+        </li>
+      </ul>
+    </section>
 
     <section>
       <h3 class="sectionHeading">Experience</h3>
@@ -79,9 +136,9 @@
           <h3>Full Stack Developer at EventGames.io : Jan 2024 - Present</h3>
           <ul>
             <li>
-              Maintained and enhanced interactive 3D games using Three.js and React,
-              ensuring optimal performance, bug-free experiences, and seamless
-              deployment for client companies
+              Maintained and enhanced interactive 3D games using Three.js and
+              React, ensuring optimal performance, bug-free experiences, and
+              seamless deployment for client companies
             </li>
             <li>
               Created a customizable 3D endless runner game similar to Subway
@@ -157,7 +214,8 @@
         <li>
           <a
             href="https://apps.apple.com/us/app/akhar-punjabi-games/id1615504498"
-            >Akhar Jor</a>, the app I worked on at Khalis Foundation, which is a vocabulary
+            >Akhar Jor</a
+          >, the app I worked on at Khalis Foundation, which is a vocabulary
           game for anyone who wants to learn Punjabi.
         </li>
 
@@ -172,41 +230,5 @@
         </li>
       </ul>
     </section>
-
-    <section>
-      <h3 class="sectionHeading">Education</h3>
-      <h3>B.S Computer Science</h3>
-      <h4 class="sectionHeadingEdu">
-        New Jersey Institute of Technology (Graduating Dec 2024)
-      </h4>
-      <h4>Relevant Coursework</h4>
-      <ul class="sectionHeadingEdu">
-        <li>Advanced Data Structures and Algorithms (CS 435)</li>
-        <li>Android Application Development (CS 388)</li>
-        <li>Advanced Database Systems (CS 434)</li>
-        <li>
-          Internet Applications (IT 202 - Browser and Client Side Technologies)
-        </li>
-        <li>
-          Programming Language Concepts (CS280 - Implemented our own Interpreter
-          in C++)
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h3 class="sectionHeading">Technical Skills</h3>
-      <ul class="sectionData">
-        <li>
-          Experienced in web development, including front-end and back-end
-          technologies.
-        </li>
-        <li>Familiar with database management and SQL, Android and iOS development, and Dev Ops</li>
-        <li>
-          Strong command of: python, c/c++, java, bash, java, android compose, html, css, javascript, node.js, react js, react native, redux, git, vim, azure, mysql, selenium and much more
-        </li>
-      </ul>
-    </section>
-
   </body>
 </html>
