@@ -11,30 +11,48 @@
     />
     <style>
       body {
-        font-family: 'Open Sans';
+        font-family: 'Open Sans', sans-serif;
         font-size: 0.75em;
         margin: 0 auto;
         max-width: 1000px;
-        padding: 0 10px;
-        margin-top: -1em;
+      }
+
+      header {
+        display: flex;
+        margin-bottom: -2em;
+      }
+
+      #myName {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        font-size: 4em;
+        padding-right: 4em;
       }
 
       #qr {
-        width: 75px;
-        height: 75;
-        float: right;
+        width: 8em;
+        height: 8em;
       }
 
       #infoHeader {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding-left: 1em;
-        display: flex;
-        justify-content: center;
       }
 
-      .headerItem {
-        margin-right: 4.5em;
+      .headerInfoItem {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2em;
+        margin-bottom: -2em;
+      }
+
+      .headerTitle {
+        width: 5em;
+      }
+
+      .headerDetail {
+        width: 10em;
       }
 
       .sectionHeading {
@@ -45,7 +63,7 @@
       }
 
       .sectionHeadingEdu {
-        margin-top: -0.5em;
+        margin-top: -1em;
         /* margin-bottom: -0.5em; */
       }
 
@@ -53,49 +71,53 @@
         margin-top: -1em;
       }
     </style>
-    <!-- for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
 
   <body>
-    <img id="qr" src="qr.png" alt="qr code. that take you to resume PDF" />
     <header>
-      <h1>Gian Singh</h1>
-      <h2>Software Engineer</h2>
       <div id="infoHeader">
-        <div class="headerItem">
-          <i class="fa fa-envelope"></i>
-          <a href="mailto:gs4@njit.edu ">gs4@njit.edu</a> |
+        <div class="headerInfoItem">
+          <p class="headerTitle">Email:</p>
+          <a class="headerDetail" href="mailto:gs4@njit.edu ">gs4@njit.edu</a>
         </div>
-        <div class="headerItem">
-          <i class="fa fa-globe"></i>
-          <a href="https://giansingh4710.xyz">giansingh4710.xyz</a> |
+        <div class="headerInfoItem">
+          <p class="headerTitle">Website:</p>
+          <a class="headerDetail" href="https://giansingh4710.xyz"
+            >giansingh4710.xyz</a
+          >
         </div>
-        <div class="headerItem">
-          <i class="fa fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/giansingh4710">LinkedIn</a>|
+        <div class="headerInfoItem">
+          <p class="headerTitle">LinkedIn:</p>
+          <a
+            class="headerDetail"
+            href="https://www.linkedin.com/in/giansingh4710"
+            >@giansingh4710</a
+
+            
+          >
         </div>
-        <div class="headerItem">
-          <i class="fa fa-github"></i>
-          <a href="https://github.com/Giansingh4710">Github</a>|
+        <div class="headerInfoItem">
+          <p class="headerTitle">Github:</p>
+          <a class="headerDetail" href="https://github.com/Giansingh4710"
+            >@giansingh4710</a
+          >
         </div>
-        <div class="headerItem">
-          <i class="fa fa-home"></i>
-          Oakland, New Jersey
+        <div class="headerInfoItem">
+          <p class="headerTitle">Location:</p>
+          <p class="headerDetail">Oakland, New Jersey</p>
         </div>
       </div>
+      <h1 id="myName">Gian Singh</h1>
+      <img id="qr" src="qr.png" alt="qr code. that take you to resume PDF" />
     </header>
 
     <section>
       <h3 class="sectionHeading">Education</h3>
-      <h3>
+      <p class="sectionHeadingEdu">
         B.S Computer Science : New Jersey Institute of Technology (Graduating
         Dec 2024)
-      </h3>
-      <h4 class="sectionHeadingEdu">Relevant Coursework</h4>
+      </p>
+      <p class="sectionHeadingEdu" >Relevant Coursework</p>
       <ul class="sectionHeadingEdu">
         <li>Advanced Data Structures and Algorithms (CS 435)</li>
         <li>
