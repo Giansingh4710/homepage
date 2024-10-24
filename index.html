@@ -21,209 +21,206 @@
       <header id="header">
         <p>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</p>
         <p>
-          With the Support of the Almight through the Gurus and the Shaheeds
+          With the Support of the Almighty through the Gurus and the Shaheeds
         </p>
-        <span class="avatar"
-          ><img
+        <span class="avatar">
+          <img
             src="https://avatars.githubusercontent.com/u/73843250"
-            alt="picture of Gian Singh"
-        /></span>
-        <h2>
-          A Showcase Of Some Projects
-          <p>
-            <a href="./assets/resume.pdf">Resume</a>
-          </p>
-        </h2>
-
+            alt="Gian Singh"
+          />
+        </span>
+        <h1>Gian Singh</h1>
+        <p><a href="./assets/resume.pdf" class="underline">View Resume</a></p>
         <ul class="icons">
           <li>
             <a
               href="https://github.com/Giansingh4710"
-              class="icon style2 fa-github"
-              ><span class="label">Github</span></a
+              class="icon"
+              target="_blank"
             >
+              <i class="fa fa-github"></i>
+            </a>
           </li>
           <li>
             <a
               href="https://www.linkedin.com/in/giansingh4710/"
-              class="icon style2 fa-linkedin"
+              class="icon"
               target="_blank"
-              ><span class="label">LinkedIn</span></a
             >
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:gs4@njit.edu" class="icon" target="_blank">
+              <i class="fa fa-envelope"></i>
+            </a>
           </li>
         </ul>
       </header>
 
       <section id="main">
-        <section class="thumbnails" id="thumbnails">
-          <div class="thumbnailRow" id="thumbnails_row1"></div>
-          <div class="thumbnailRow" id="thumbnails_row2"></div>
-          <div class="thumbnailRow" id="thumbnails_row3"></div>
-        </section>
+        <h2>Featured Projects</h2>
+        <div class="thumbnails" id="thumbnails"></div>
       </section>
-      <h1>Other Projects</h1>
-      <ol id="otherPages"></ol>
+
+      <section id="other-projects">
+        <h2>Other Projects</h2>
+        <ol id="otherPages"></ol>
+      </section>
 
       <footer id="footer">
+        <p>&copy; 2024 Gian Singh. All rights reserved.</p>
         <p>
-          &copy; This was made through the 100% kirpa of
-          <a href="https://www.sikhitothemax.org/shabad?id=961"> ਵਾਹਿਗੁਰੂ</a>
-          Ji.
+          This was made through the 100% kirpa of
+          <a href="https://www.sikhitothemax.org/shabad?id=961">ਵਾਹਿਗੁਰੂ</a> Ji.
         </p>
         <p>ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖ਼ਾਲਸਾ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਹਿ</p>
       </footer>
     </div>
+
+    <script>
+      const reposToShow = [
+        {
+          projectName: "Geevo Smoothie",
+          linkToProject: "https://geevosmoothie.com/",
+          linkToCodebase: "https://github.com/Giansingh4710/geevo-smoothie",
+          picLink: "./assets/pics/geevosmoothie.jpg",
+          description:
+            "As a freelance project, I developed a dynamic website for a startup smoothie brand. The site effectively showcases their menu and brand values, creating a vibrant online presence. By implementing strategic design and SEO techniques, I helped enhance their visibility, driving customer engagement and increasing sales.",
+        },
+        {
+          projectName: "Keerat",
+          linkToProject: "https://giansingh4710.github.io/keerat/",
+          linkToCodebase: "https://github.com/Giansingh4710/keerat",
+          picLink: "./assets/pics/keerat.jpg",
+          description:
+            "This website is a comprehensive collection of audio content related to the Sikh faith, including scripture readings, singing (keertan), and discourse (katha). It combines various Sikh-themed websites into one platform.",
+        },
+        {
+          projectName: "Santhiya Pothi",
+          linkToProject: "https://santhiyapothi.xyz",
+          linkToCodebase: "https://github.com/Giansingh4710/SanthiyaPothi",
+          picLink: "./assets/pics/santhiyaPothi.jpg",
+          description:
+            "This app focuses on Santhiya, a method for learning to read Gurbani (Sikh Scriptures). It's available on iOS, Android, and Web platforms, offering specialized tools for improving reading proficiency.",
+        },
+        {
+          projectName: "Akhar Punjabi Games",
+          linkToProject:
+            "https://apps.apple.com/us/app/akhar-punjabi-games/id1615504498",
+          linkToCodebase:
+            "https://github.com/KhalisFoundation/akhar-punjabi-games",
+          picLink: "./assets/pics/akharGames.jpg",
+          description:
+            "I created the foundation of the app, using React Native, during my internship at Khalis Foundation. This app hosts a collection of games specifically designed to facilitate learning of the Punjabi Alphabet. It is currently available on iOS.",
+        },
+        {
+          projectName: "Brand Run",
+          linkToProject: "http://alumni.run",
+          linkToCodebase: "https://github.com/Giansingh4710/Brand_Run_Capstone",
+          picLink: "./assets/pics/brandrun.jpg",
+          description:
+            "Helped make Running Game similar to Subway Surfers where you have to avoid obstacles and have the ability to get power ups to give you abilities and potentially increase your score. The game was made using React-three-fiber which allowed us to make the game in 3D but still on the web",
+        },
+        {
+          projectName: "SMS Shabad",
+          linkToProject: "https://github.com/Giansingh4710/sms-shabad",
+          linkToCodebase: "https://github.com/Giansingh4710/sms-shabad",
+          picLink: "./assets/pics/smsShabad.png",
+          description:
+            "I developed a script that sends SMS reminders to cultivate gratitude throughout the day. Additionally, I integrated a feature to deliver daily messages to users.",
+        },
+        {
+          projectName: "Learn Gurmukhi",
+          linkToProject: "https://giansingh4710.github.io/learnGurmukhi/",
+          linkToCodebase: "https://github.com/Giansingh4710/learnGurmukhi",
+          picLink: "./assets/pics/learnGurmukhi.png",
+          description:
+            "This website assists those learning Gurmukhi with three main features: practicing Akhars (letters) and letter combinations, learning the days of the week, and mastering numbers in Gurmukhi.",
+        },
+        {
+          projectName: "Keertan Links",
+          linkToProject: "http://45.76.2.28/keertan101Links/",
+          linkToCodebase: "https://github.com/keertan101/links",
+          picLink: "./assets/pics/keertanLinks.jpeg",
+          description:
+            "This site provides links to the files used in the keertan (hymns from Sikh scriptures) posts on the Instagram page Keertan101.",
+        },
+        {
+          projectName: "Camp Panth",
+          linkToProject: "https://giansingh4710.github.io/campPanth/",
+          linkToCodebase: "https://github.com/giansingh4710/campPanth",
+          picLink: "./assets/pics/campPanth.png",
+          description:
+            "This was the previous landing page for the Sikh camp, Camp Panth. The new website can be found at panth.camp.",
+        },
+      ];
+
+      const otherRepos = [
+        "https://aisakirtan.com",
+        "https://sdoji.xyz",
+        "https://santjikatha.xyz/",
+        "https://yankpaste.xyz/",
+        "",
+
+        "https://github.com/Giansingh4710/shabadApi",
+        "https://github.com/Giansingh4710/dotfiles",
+        "",
+
+        "https://giansingh4710.github.io/homepage",
+        "https://giansingh4710.github.io/AisaKirtan/",
+        "https://giansingh4710.github.io/trackIndex/",
+        "https://giansingh4710.github.io/searchGb",
+        "https://giansingh4710.github.io/randomshabad",
+        "https://giansingh4710.github.io/bhai_jagpal_singh_ji",
+        "https://giansingh4710.github.io/engBani/",
+        "https://giansingh4710.github.io/wordsInBani",
+        "https://giansingh4710.github.io/timeBasedKeertan",
+        "https://giansingh4710.github.io/DecodeGurmukhi/",
+        "https://giansingh4710.github.io/keerat_test/",
+        "https://giansingh4710.github.io/BaniFrames/",
+        "",
+
+        "https://keertan101.github.io/links/",
+        "http://45.76.2.28",
+        "http://45.76.2.28/copyPaste/",
+      ];
+
+      function createProjectCard(project) {
+        return `
+          <div class="thumbnail">
+            <a href="${project.linkToProject}" target="_blank">
+              <img src="${project.picLink}" alt="${project.projectName}" />
+              <h3>${project.projectName}</h3>
+              <p>${project.description}</p>
+            </a>
+            <p><a href="${project.linkToCodebase}" target="_blank">View Code</a></p>
+          </div>
+        `;
+      }
+
+      function displayProjects() {
+        const thumbnails = document.getElementById("thumbnails");
+        thumbnails.innerHTML = reposToShow.map(createProjectCard).join("");
+      }
+
+      function displayOtherProjects() {
+        const otherPages = document.getElementById("otherPages");
+        otherRepos.forEach((link) => {
+          if (link === "") {
+            otherPages.appendChild(document.createElement("br"));
+          } else {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+            otherPages.appendChild(li);
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        displayProjects();
+        displayOtherProjects();
+      });
+    </script>
   </body>
-
-  <script>
-    const reposToShow = [
-      {
-        projectName: "Keerat",
-        linkToProject: "https://giansingh4710.github.io/keerat/",
-        linkToCodebase: "https://github.com/Giansingh4710/keerat",
-        picLink: "./assets/pics/keerat.jpg",
-        description:
-          "This website is a comprehensive collection of audio content related to the Sikh faith, including scripture readings, singing (keertan), and discourse (katha). It combines various Sikh-themed websites into one platform.",
-      },
-      {
-        projectName: "Santhiya Pothi",
-        linkToProject: "https://santhiyapothi.xyz",
-        linkToCodebase: "https://github.com/Giansingh4710/SanthiyaPothi",
-        picLink: "./assets/pics/santhiyaPothi.jpg",
-        description:
-          "This app focuses on Santhiya, a method for learning to read Gurbani (Sikh Scriptures). It's available on iOS, Android, and Web platforms, offering specialized tools for improving reading proficiency.",
-      },
-      {
-        projectName: "Akhar Punjabi Games",
-        linkToProject:
-          "https://apps.apple.com/us/app/akhar-punjabi-games/id1615504498",
-        linkToCodebase:
-          "https://github.com/KhalisFoundation/akhar-punjabi-games",
-        picLink: "./assets/pics/akharGames.jpg",
-        description:
-          "I created the foundation of the app, using React Native, during my internship at Khalis Foundation. This app hosts a collection of games specifically designed to facilitate learning of the Punjabi Alphabet. It is currently available on iOS.",
-      },
-      {
-        projectName: "Brand Run",
-        linkToProject: "http://alumni.run",
-        linkToCodebase: "https://github.com/Giansingh4710/Brand_Run_Capstone",
-        picLink: "./assets/pics/brandrun.jpg",
-        description:
-          "Helped make Running Game similar to Subway Surfers where you have to avoid obstacles and have the ability to get power ups to give you abilities and potentially increase your score. The game was made using React-three-fiber which allowed us to make the game in 3D but still on the web",
-      },
-      {
-        projectName: "SMS Shabad",
-        linkToProject: "https://github.com/Giansingh4710/sms-shabad",
-        linkToCodebase: "https://github.com/Giansingh4710/sms-shabad",
-        picLink: "./assets/pics/smsShabad.png",
-        description:
-          "I developed a script that sends SMS reminders to cultivate gratitude throughout the day. Additionally, I integrated a feature to deliver daily messages to users.",
-      },
-      {
-        projectName: "Learn Gurmukhi",
-        linkToProject: "https://giansingh4710.github.io/learnGurmukhi/",
-        linkToCodebase: "https://github.com/Giansingh4710/learnGurmukhi",
-        picLink: "./assets/pics/learnGurmukhi.png",
-        description:
-          "This website assists those learning Gurmukhi with three main features: practicing Akhars (letters) and letter combinations, learning the days of the week, and mastering numbers in Gurmukhi.",
-      },
-      {
-        projectName: "Keertan Links",
-        linkToProject: "http://45.76.2.28/keertan101Links/",
-        linkToCodebase: "https://github.com/keertan101/links",
-        picLink: "./assets/pics/keertanLinks.jpeg",
-        description:
-          "This site provides links to the files used in the keertan (hymns from Sikh scriptures) posts on the Instagram page Keertan101.",
-      },
-      {
-        projectName: "Camp Panth",
-        linkToProject: "https://giansingh4710.github.io/campPanth/",
-        linkToCodebase: "https://github.com/giansingh4710/campPanth",
-        picLink: "./assets/pics/campPanth.png",
-        description:
-          "This was the previous landing page for the Sikh camp, Camp Panth. The new website can be found at panth.camp.",
-      },
-    ];
-
-    const otherRepos = [
-      "https://aisakirtan.com",
-      "https://sdoji.xyz",
-      "https://santjikatha.xyz/",
-      "https://yankpaste.xyz/",
-      "",
-
-      "https://github.com/Giansingh4710/shabadApi",
-      "https://github.com/Giansingh4710/dotfiles",
-      "",
-
-      "https://giansingh4710.github.io/homepage",
-      "https://giansingh4710.github.io/AisaKirtan/",
-      "https://giansingh4710.github.io/trackIndex/",
-      "https://giansingh4710.github.io/searchGb",
-      "https://giansingh4710.github.io/randomshabad",
-      "https://giansingh4710.github.io/bhai_jagpal_singh_ji",
-      "https://giansingh4710.github.io/engBani/",
-      "https://giansingh4710.github.io/wordsInBani",
-      "https://giansingh4710.github.io/timeBasedKeertan",
-      "https://giansingh4710.github.io/DecodeGurmukhi/",
-      "https://giansingh4710.github.io/keerat_test/",
-      "https://giansingh4710.github.io/BaniFrames/",
-      "",
-
-      "https://keertan101.github.io/links/",
-      "http://45.76.2.28",
-      "http://45.76.2.28/copyPaste/",
-    ];
-
-    otherRepos.map((link) => {
-      const ol = document.getElementById("otherPages");
-      if (link === "") {
-        ol.appendChild(document.createElement("br"));
-      } else {
-        const li = document.createElement("li");
-        li.innerHTML = `<a id='otherPagesLinks' href="${link}">${link}</a>`;
-        ol.appendChild(li);
-      }
-    });
-
-    reposToShow.map((item) => {
-      putDataOnScreen(item);
-    });
-
-    function putDataOnScreen({
-      projectName,
-      linkToProject,
-      linkToCodebase,
-      picLink,
-      description,
-    }) {
-      function getDivWithLeastAtags() {
-        const div1 = document.getElementById("thumbnails_row1");
-        const div2 = document.getElementById("thumbnails_row2");
-        const div3 = document.getElementById("thumbnails_row3");
-        const div1a = div1.getElementsByClassName("thumbnail").length;
-        const div2a = div2.getElementsByClassName("thumbnail").length;
-        const div3a = div3.getElementsByClassName("thumbnail").length;
-
-        // console.log(div1a, div2a, div3a)
-        if (div1a < 3) {
-          return div1;
-        } else if (div2a < 3) {
-          return div2;
-        }
-        return div3;
-      }
-
-      const div = getDivWithLeastAtags();
-      div.innerHTML += `
-                <div class='thumbnail'>
-                    <a href="${linkToProject}" target="_blank">
-                      <img src="${picLink}" alt="" />
-                      <h1>${projectName}</h1>
-                      <p>${description}</p>
-                    </a>
-                    <a target="_blank" href="${linkToCodebase}">Link To Git Repo </a>
-                </div>`;
-    }
-  </script>
 </html>
