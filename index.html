@@ -114,7 +114,7 @@
           projectName: "Santhiya Pothi",
           linkToProject: "https://santhiyapothi.xyz",
           linkToCodebase: "https://github.com/Giansingh4710/SanthiyaPothi",
-          picLink: "./assets/pics/santhiyaPothi.jpg",
+          picLink: "./assets/pics/santhiyaPothi.png",
           description:
             "This app focuses on Santhiya, a method for learning to read Gurbani (Sikh Scriptures). It's available on iOS, Android, and Web platforms, offering specialized tools for improving reading proficiency.",
         },
@@ -135,14 +135,6 @@
           picLink: "./assets/pics/brandrun.jpg",
           description:
             "Helped make Running Game similar to Subway Surfers where you have to avoid obstacles and have the ability to get power ups to give you abilities and potentially increase your score. The game was made using React-three-fiber which allowed us to make the game in 3D but still on the web",
-        },
-        {
-          projectName: "SMS Shabad",
-          linkToProject: "https://github.com/Giansingh4710/sms-shabad",
-          linkToCodebase: "https://github.com/Giansingh4710/sms-shabad",
-          picLink: "./assets/pics/smsShabad.png",
-          description:
-            "I developed a script that sends SMS reminders to cultivate gratitude throughout the day. Additionally, I integrated a feature to deliver daily messages to users.",
         },
         {
           projectName: "Learn Gurmukhi",
@@ -225,7 +217,7 @@
             otherPages.appendChild(document.createElement("br"));
           } else {
             const li = document.createElement("li");
-            li.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+            li.innerHTML = `<a href="${link}" target="_blank" class="underline">${link}</a>`;
             otherPages.appendChild(li);
           }
         });

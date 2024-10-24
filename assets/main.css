@@ -148,7 +148,8 @@ h6 {
 
 .thumbnail > p {
   /* the 'View Code' */
-  /* text-decoration: underline; */
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
 }
 
 #footer {
