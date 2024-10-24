@@ -79,7 +79,7 @@ h6 {
   justify-self: center;
   list-style: none;
   padding: 0;
-  width: 50%;
+  width: 100%;
   gap: 1em;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -91,6 +91,19 @@ h6 {
 
 .icon {
   font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon i {
+  flex: 1;
+  padding-top: 0.5em;
+}
+
+.icon span{
+  flex: 1;
+  font-size: 0.5em;
 }
 
 .thumbnails {
