@@ -1,9 +1,4 @@
 <!doctype html>
-<!--
-	Visualize by TEMPLATED
-	templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
   <head>
     <title>With Grace from the Creator</title>
@@ -25,7 +20,7 @@
         </p>
         <span class="avatar">
           <img
-            src="https://avatars.githubusercontent.com/u/73843250"
+            src="./assets/pics/profile.jpg"
             alt="Gian Singh"
           />
         </span>
@@ -87,7 +82,7 @@
       </section>
 
       <footer id="footer">
-        <p>&copy; 2024 Gian Singh. All rights reserved.</p>
+        <p>&copy; 2025 Gian Singh. All rights reserved.</p>
         <p>
           This was made through the 100% kirpa of
           <a href="https://www.sikhitothemax.org/shabad?id=961">ਵਾਹਿਗੁਰੂ</a> Ji.
@@ -98,6 +93,14 @@
 
     <script>
       const reposToShow = [
+        {
+          projectName: "ChetHari",
+          linkToProject: "./chet/",
+          linkToCodebase: "",
+          picLink: "./chet/poster1.jpg",
+          description:
+            "A native iOS app for reading and searching Gurbani. Features powerful search, multiple translations, beautiful typography, widgets, iCloud sync, and more.",
+        },
         {
           projectName: "Keerat",
           linkToProject: "https://giansingh4710.github.io/keerat/",
@@ -198,44 +201,47 @@
       ];
 
       const otherRepos = [
-        "https://aisakirtan.com",
-        // "https://sdoji.xyz",
-        // "https://santjikatha.xyz/",
-        "",
+        { name: "Aisa Kirtan", url: "https://aisakirtan.com" },
+        // { name: "Sdoji", url: "https://sdoji.xyz" },
+        // { name: "Sant Ji Katha", url: "https://santjikatha.xyz/" },
+        null,
 
-        "https://github.com/Giansingh4710/shabadApi",
-        "https://github.com/Giansingh4710/dotfiles",
-        "",
+        { name: "Shabad API", url: "https://github.com/Giansingh4710/shabadApi" },
+        { name: "Dotfiles", url: "https://github.com/Giansingh4710/dotfiles" },
+        null,
 
-        "https://giansingh4710.github.io/homepage",
-        "https://giansingh4710.github.io/AisaKirtan/",
-        "https://giansingh4710.github.io/trackIndex/",
-        "https://giansingh4710.github.io/searchGb",
-        "https://giansingh4710.github.io/randomshabad",
-        "https://giansingh4710.github.io/bhai_jagpal_singh_ji",
-        "https://giansingh4710.github.io/engBani/",
-        "https://giansingh4710.github.io/wordsInBani",
-        "https://giansingh4710.github.io/timeBasedKeertan",
-        "https://giansingh4710.github.io/DecodeGurmukhi/",
-        "https://giansingh4710.github.io/keerat_test/",
-        "https://giansingh4710.github.io/old_learnGurmukhi/",
-        "https://giansingh4710.github.io/BaniFrames/",
-        "",
+        { name: "Homepage (Old)", url: "https://giansingh4710.github.io/homepage" },
+        { name: "Aisa Kirtan (GH Pages)", url: "https://giansingh4710.github.io/AisaKirtan/" },
+        { name: "Track Index", url: "https://giansingh4710.github.io/trackIndex/" },
+        { name: "Search Gurbani", url: "https://giansingh4710.github.io/searchGb" },
+        { name: "Random Shabad", url: "https://giansingh4710.github.io/randomshabad" },
+        { name: "Bhai Jagpal Singh Ji", url: "https://giansingh4710.github.io/bhai_jagpal_singh_ji" },
+        { name: "English Bani", url: "https://giansingh4710.github.io/engBani/" },
+        { name: "Words in Bani", url: "https://giansingh4710.github.io/wordsInBani" },
+        { name: "Time Based Keertan", url: "https://giansingh4710.github.io/timeBasedKeertan" },
+        { name: "Decode Gurmukhi", url: "https://giansingh4710.github.io/DecodeGurmukhi/" },
+        { name: "Keerat (Test)", url: "https://giansingh4710.github.io/keerat_test/" },
+        { name: "Learn Gurmukhi (Old)", url: "https://giansingh4710.github.io/old_learnGurmukhi/" },
+        { name: "Bani Frames", url: "https://giansingh4710.github.io/BaniFrames/" },
+        null,
 
-        "http://keertan101.github.io/links/",
-        "http://45.76.2.28",
-        "http://45.76.2.28/copyPaste/",
+        { name: "Keertan 101 Links", url: "http://keertan101.github.io/links/" },
+        { name: "VPS Server", url: "http://45.76.2.28" },
+        { name: "Copy Paste (VPS)", url: "http://45.76.2.28/copyPaste/" },
       ];
 
       function createProjectCard(project) {
+        const codeLink = project.linkToCodebase
+          ? `<p><a href="${project.linkToCodebase}" target="_blank">View Code</a></p>`
+          : "";
         return `
           <div class="thumbnail">
             <a href="${project.linkToProject}" target="_blank">
-              <img src="${project.picLink}" alt="${project.projectName}" />
+              <img src="${project.picLink}" alt="${project.projectName}" class="${project.imgClass || ""}" />
               <h3>${project.projectName}</h3>
               <p>${project.description}</p>
             </a>
-            <p><a href="${project.linkToCodebase}" target="_blank">View Code</a></p>
+            ${codeLink}
           </div>
         `;
       }
@@ -247,12 +253,12 @@
 
       function displayOtherProjects() {
         const otherPages = document.getElementById("otherPages");
-        otherRepos.forEach((link) => {
-          if (link === "") {
+        otherRepos.forEach((item) => {
+          if (!item) {
             otherPages.appendChild(document.createElement("br"));
           } else {
             const li = document.createElement("li");
-            li.innerHTML = `<a href="${link}" target="_blank" class="underline">${link}</a>`;
+            li.innerHTML = `<a href="${item.url}" target="_blank">${item.name}</a>`;
             otherPages.appendChild(li);
           }
         });

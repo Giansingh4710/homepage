@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChetHari - Gurbani Reader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f0f4f8;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #007AFF 0%, #00c6fb 50%, #005bea 100%);
+            padding: 80px 20px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 32px;
+            margin: 0 auto 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.05);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -60px auto 0;
+            padding: 0 20px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #007AFF, #00c6fb);
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 4px 16px rgba(0,122,255,0.1);
+            border-color: rgba(0,122,255,0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .feature-category {
+            margin-bottom: 32px;
+        }
+
+        .feature-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-category > h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #007AFF;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+
+        .support-card {
+            background: linear-gradient(135deg, #007AFF 0%, #0051a8 100%);
+            color: white;
+        }
+
+        .support-card h2 {
+            color: white;
+        }
+
+        .support-card h2::before {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .support-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.05rem;
+        }
+
+        .support-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 12px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            transition: background 0.2s ease;
+        }
+
+        .support-email:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 14px;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .app-store-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.03);
+        }
+
+        .poster-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .poster-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 20px 100px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .app-icon {
+                width: 110px;
+                height: 110px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="app-icon">
+                <img src="icon.svg" alt="Chet App Icon">
+            </div>
+            <h1>ChetHari</h1>
+            <p class="tagline">Gurbani Reader for iOS</p>
+            <a href="https://apps.apple.com/us/app/chethari/id6753928210" class="app-store-btn" target="_blank">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download on the App Store
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>About</h2>
+            <p class="about-text">Chet is a native iOS app for reading and searching Gurbani (Sikh scriptures). Access Sri Guru Granth Sahib Ji with powerful search, multiple translations, and beautiful typography.</p>
+        </div>
+
+        <div class="card">
+            <h2>Features</h2>
+
+            <div class="feature-category">
+                <h3>Search & Discovery</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🔍</span> Gurmukhi Search</h3>
+                        <p>Search with custom keyboard layouts — QWERTY and traditional Punjabi</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🎲</span> Random Shabad</h3>
+                        <p>Discover new shabads with random selection</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📜</span> Search History</h3>
+                        <p>Quick access to recently viewed shabads</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Daily Hukamnama</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📖</span> Today's Hukamnama</h3>
+                        <p>Read the daily Hukamnama from Sri Darbar Sahib</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📅</span> Historical Archive</h3>
+                        <p>Access Hukamnamas from any past date</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Organization</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">⭐</span> Save Shabads</h3>
+                        <p>Bookmark your favorite shabads for easy access</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📁</span> Folder Organization</h3>
+                        <p>Create hierarchical folders to organize saved shabads</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">↕️</span> Drag to Reorder</h3>
+                        <p>Customize the order of folders and shabads</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Translations & Languages</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🌐</span> Multiple Translations</h3>
+                        <p>English, Punjabi, Hindi, and Spanish</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📚</span> Translation Sources</h3>
+                        <p>Multiple scholarly sources — BDB, Sant Singh Khalsa, Manmohan Singh, and more</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🔤</span> Transliteration</h3>
+                        <p>Romanized text for those learning Gurmukhi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Reading Experience</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🎨</span> 9 Gurmukhi Fonts</h3>
+                        <p>AnmolLipi, GurbaniAkhar, NotoSans variants, and more</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🔎</span> Pinch to Zoom</h3>
+                        <p>Adjustable text sizes for Gurbani and each translation</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">⏸️</span> Visraam Markers</h3>
+                        <p>Color-coded pause markers for proper recitation</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">➡️</span> Larivaar Mode</h3>
+                        <p>Traditional connected text display — tap to toggle</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">👆</span> Swipe Navigation</h3>
+                        <p>Swipe between shabads seamlessly</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🌙</span> Dark Mode</h3>
+                        <p>Full support for light and dark themes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Widgets</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📱</span> Random Shabad</h3>
+                        <p>Fresh shabad on your home screen — configurable 1-24 hour refresh</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📱</span> Hukamnama</h3>
+                        <p>Daily Hukamnama at a glance</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📱</span> Favorites</h3>
+                        <p>Quick access to your saved shabads</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Backup & Import</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">☁️</span> iCloud Sync</h3>
+                        <p>Sync across all your devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">💾</span> Auto Backup</h3>
+                        <p>Automatic daily backups kept for 3 days</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📥</span> Import Support</h3>
+                        <p>Import from iGurbani (.igb) and Gurbani Khoj (.gkhoj)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📤</span> Export & Restore</h3>
+                        <p>Full backup export with all settings and data</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h3>Extras</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📋</span> Copy & Share</h3>
+                        <p>Copy individual lines or entire shabads</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">📝</span> Notes</h3>
+                        <p>Add personal notes to saved shabads</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><span class="feature-icon">🔒</span> Screen Always On</h3>
+                        <p>Prevents screen sleep while reading</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Launch Posters</h2>
+            <div class="poster-gallery">
+                <img src="poster1.jpg" alt="ChetHari Launch Poster" />
+                <img src="poster2.jpg" alt="ChetHari Features Poster" />
+            </div>
+        </div>
+
+        <div class="card support-card">
+            <h2>Support</h2>
+            <p>Have questions, feedback, or need help?</p>
+            <a href="mailto:gurparsaddev13@gmail.com" class="support-email">
+                ✉️ gurparsaddev13@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ChetHari. All rights reserved.</p>
+    </footer>
+</body>
+</html>
