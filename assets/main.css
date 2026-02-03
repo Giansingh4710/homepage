@@ -198,6 +198,22 @@ h1, h2, h3 {
   color: var(--text-muted);
 }
 
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0 1.2em 0.6em;
+}
+
+.badge {
+  font-size: 0.65em;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  background: var(--glass-hover);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
 .thumbnail > p {
   border-top: 1px solid var(--glass-border);
   margin: 0;
