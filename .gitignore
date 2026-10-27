@@ -1,1 +1,4 @@
 .DS_Store
+
+# Local portrait collection; keep original photos out of the public repository.
+/professional-photos/
