@@ -185,6 +185,13 @@ h1, h2, h3 {
   object-position: center 30%;
 }
 
+.thumbnail img.app-icon {
+  object-fit: contain;
+  object-position: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #5848e9, #14b8b8);
+}
+
 .thumbnail h3 {
   font-size: 1.1em;
   font-weight: 600;
